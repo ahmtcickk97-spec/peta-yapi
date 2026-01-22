@@ -1,57 +1,50 @@
 const projects = [
   {
     id: 1,
-    title: "Peta Safir Konutları",
-    category: "Konut Projesi",
-    image: "https://images.unsplash.com/photo-1545324418-f1d3c5b53571?q=80&w=1000",
+    title: "Modern Konut Projesi",
+    description: "İstanbul'un merkezinde, deprem yönetmeliğine uygun, modern mimari ve lüks detaylarla inşa edilen konut projemiz.",
+    image: "/proje1.jpg", // public klasörüne attığın fotoğrafın adı
+    category: "Konut İnşaatı",
+    details: "1200m² Toplam Alan | 24 Daire | 2025 Teslim"
   },
   {
     id: 2,
-    title: "Kuzey Endüstri Merkezi",
-    category: "Endüstriyel Yapı",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000",
+    title: "Kentsel Dönüşüm Çalışması",
+    description: "Eski yapıların güvenle dönüştürülmesi ve sağlam yarınlar için modern yaşam alanlarına dönüştürülmesi süreci.",
+    image: "/proje2.jpg",
+    category: "Kentsel Dönüşüm",
+    details: "Güçlendirilmiş Temel | Modern Cephe Tasarımı"
   },
-  {
-    id: 3,
-    title: "Modern İş Merkezi",
-    category: "Ticari Proje",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000",
-  },
+  // Yeni projelerini buraya eklemeye devam edebilirsin
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 bg-slate-50">
+    <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-slate-900 mb-4">Seçkin Projelerimiz</h2>
-          <div className="w-24 h-1 bg-orange-500 mx-auto"></div>
-          <p className="mt-6 text-slate-600 max-w-2xl mx-auto">
-            Peta Yapı imzasıyla hayata geçirdiğimiz, estetik ve güvenliğin buluştuğu bazı çalışmalarımız.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 className="text-3xl md:text-4xl font-black text-brand-primary text-center mb-12 uppercase tracking-tighter">
+          PROJELERİMİZ
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div key={project.id} className="group relative overflow-hidden rounded-xl shadow-lg bg-white">
-              {/* Görsel Alanı */}
-              <div className="aspect-[4/3] overflow-hidden">
+            <div key={project.id} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all group">
+              <div className="relative h-64 overflow-hidden">
                 <img 
                   src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  alt={project.title} 
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" 
                 />
-              </div>
-              
-              {/* Bilgi Kartı */}
-              <div className="p-6">
-                <span className="text-orange-500 text-sm font-semibold uppercase tracking-wider">
+                <div className="absolute top-4 left-4 bg-brand-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
                   {project.category}
-                </span>
-                <h3 className="text-xl font-bold text-slate-900 mt-2">{project.title}</h3>
-                <button className="mt-4 text-slate-700 font-medium hover:text-orange-500 flex items-center gap-2 transition">
-                  Detayları Gör →
-                </button>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-brand-primary mb-2 uppercase">{project.title}</h3>
+                <p className="text-sm text-gray-600 mb-4 line-clamp-3">{project.description}</p>
+                <div className="text-[11px] font-bold text-brand-text border-t pt-4 flex justify-between items-center">
+                   <span>{project.details}</span>
+                   <span className="text-[#38BDF8]">İNCELİ</span>
+                </div>
               </div>
             </div>
           ))}
