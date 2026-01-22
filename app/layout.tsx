@@ -1,3 +1,4 @@
+// app/layout.tsx
 import WhatsAppButton from "@/components/WhatsAppButton";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
@@ -18,6 +19,9 @@ export const metadata: Metadata = {
   },
   description: "Peta Yapı; modern inşaat, mimari tasarım ve kentsel dönüşüm alanlarında profesyonel çözümler sunar. Geleceği güvenle inşa ediyoruz.",
   keywords: ["inşaat", "mimari", "kentsel dönüşüm", "Peta Yapı", "tadilat", "modern yapılar"],
+  verification: {
+    google: "WLZjGuPsyLsML2mAQi-NTo3Z1d8Yb_FhgUFjR7XbiSs",
+  },
   openGraph: {
     title: "Peta Yapı | Modern İnşaat ve Mimari",
     description: "Geleceği güvenle inşa ediyoruz.",
