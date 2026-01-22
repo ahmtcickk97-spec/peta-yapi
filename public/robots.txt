@@ -1,0 +1,6 @@
+# Tüm botlara (Google, Bing vb.) izin ver
+User-agent: *
+Allow: /
+
+# Sitenin haritasını botlara göster (Google için kritik)
+Sitemap: https://peta-yapi.vercel.app/sitemap.xml
