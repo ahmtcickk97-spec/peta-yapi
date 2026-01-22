@@ -1,14 +1,14 @@
+import WhatsAppButton from "@/components/WhatsAppButton";
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google"; // Geist yerine Montserrat'ı ekledik
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import Navbar from "@/components/Navbar"; // @ simgesinin components klasörüne baktığından emin ol
+import Footer from "@/components/Footer";
 
-// Montserrat font ayarlarını yapıyoruz
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700", "900"],
-  variable: "--font-montserrat", // CSS değişkeni olarak tanımladık
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -16,20 +16,14 @@ export const metadata: Metadata = {
   description: "Peta Yapı ile geleceği güvenle inşa ediyoruz.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr">
-      {/* Montserrat değişkenini body'e ekledik. 
-        'font-sans' sınıfı, Tailwind'in bu fontu kullanmasını sağlar.
-      */}
-      <body className={`${montserrat.variable} font-sans antialiased text-slate-900`}>
+      <body className={`${montserrat.variable} font-sans antialiased text-brand-text`}>
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
