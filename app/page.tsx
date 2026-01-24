@@ -1,28 +1,42 @@
-import Hero from '@/components/Hero';
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 import About from "@/components/About";
-import Projects from '@/components/Projects';
-import Services from '@/components/Services';
-import ContactForm from '@/components/ContactForm';
+import Services from "@/components/Services";
+import Projects from "@/components/Projects";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* 1. Giriş Alanı: İlk izlenim burada oluşur */}
+      {/* Gezinti Menüsü: Sayfanın en üstünde sabit durur */}
+      <Navbar />
+
+      {/* Giriş Alanı: İlk karşılama ekranı */}
       <Hero />
-      
-      {/* 2. Hakkımızda Bölümü: Vizyon ve Deneyim (Daha önce yaptığımız About bileşeni) */}
-      <About />
 
-      {/* 3. Hizmetlerimiz: Ne yapıyoruz? */}
-      <Services /> 
+      {/* Hakkımızda Bölümü: Vizyon ve Deneyim */}
+      <section id="about">
+        <About />
+      </section>
 
-      {/* 4. Projelerimiz: Neler yaptık? (Midyat projesi burada parlayacak) */}
-      <Projects />
-      
-      {/* 5. İletişim: Müşterinin bize ulaşacağı son durak */}
-      <div className="bg-gray-50 py-12">
+      {/* Hizmetlerimiz Bölümü: Sunulan çözümler */}
+      <section id="services">
+        <Services />
+      </section>
+
+      {/* Projelerimiz Bölümü: Midyat projesi ve diğerleri */}
+      <section id="projects">
+        <Projects />
+      </section>
+
+      {/* İletişim Formu Bölümü: Müşteri etkileşimi */}
+      <section id="contact" className="bg-gray-50 py-12">
         <ContactForm />
-      </div>
+      </section>
+
+      {/* Sayfa Alt Bilgisi: İletişim verileri ve telif hakları */}
+      <Footer />
     </main>
   );
 }

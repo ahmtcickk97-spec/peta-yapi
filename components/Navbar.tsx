@@ -1,42 +1,73 @@
-import Link from 'next/link';
+"use client";
+import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  return (
-    <nav className="bg-brand-primary py-3 shadow-xl fixed w-full z-50 border-b border-white/5">
-      <div className="container mx-auto px-4 flex justify-between items-center">
-        
-        {/* --- PETA YAPI LOGO ALANI --- */}
-        <Link href="/" className="flex flex-col items-start no-underline group">
-          <div className="flex items-center leading-none">
-            {/* PETA: Canlı Mavi (Lacivert üzerinde parlaması için) */}
-            <span className="text-2xl md:text-3xl font-black tracking-tighter text-[#38BDF8] uppercase">
-              PETA
-            </span>
-            {/* YAPI: Beyaz */}
-            <span className="text-2xl md:text-3xl font-light tracking-tighter text-white uppercase ml-1">
-              YAPI
-            </span>
-          </div>
-          
-          {/* SLOGAN: Güvenle Dönüşüm, Sağlam Yarınlar */}
-          <span className="text-[9px] md:text-[10px] font-medium text-white/70 uppercase tracking-[0.12em] mt-1 border-t border-white/20 pt-1">
-            Güvenle Dönüşüm, Sağlam Yarınlar
-          </span>
-        </Link>
-        {/* --- LOGO BİTİŞ --- */}
+  const [isScrolled, setIsScrolled] = useState(false);
 
-        {/* Menü Linkleri */}
-        <div className="hidden md:flex items-center space-x-8 font-semibold text-white/80 text-[13px] tracking-wide">
-          <Link href="/" className="hover:text-[#38BDF8] transition-colors">ANA SAYFA</Link>
-          <Link href="#projects" className="hover:text-[#38BDF8] transition-colors">PROJELERİMİZ</Link>
-          <Link href="#services" className="hover:text-[#38BDF8] transition-colors">HİZMETLER</Link>
-          <Link href="#contact" className="hover:text-[#38BDF8] transition-colors">İLETİŞİM</Link>
+  // Sayfa aşağı kaydırıldığında navbar'ın arka planını değiştirir
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  return (
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'}`}>
+      <div className="container mx-auto px-6 flex justify-between items-center">
+        
+        {/* LOGO */}
+        <a href="/" className="flex items-center">
+          <img 
+            src="/logo.png" 
+            alt="Peta Yapı Logo" 
+            className={`h-10 w-auto transition-all ${isScrolled ? 'brightness-100' : 'brightness-0 invert'}`} 
+          />
+        </a>
+
+        {/* MENÜ LİNKLERİ */}
+        <ul className="hidden md:flex items-center gap-10">
+          <li>
+            <a href="#about" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
+              Hakkımızda
+            </a>
+          </li>
+          <li>
+            <a href="#services" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
+              Hizmetlerimiz
+            </a>
+          </li>
+          <li>
+            <a href="#projects" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
+              Projelerimiz
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
+              İletişim
+            </a>
+          </li>
+        </ul>
+
+        {/* WHATSAPP BUTONU (Hızlı Erişim) */}
+        <a 
+          href="https://wa.me/905XXXXXXXXX" 
+          target="_blank"
+          className="hidden md:block bg-[#38BDF8] text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-tighter hover:bg-brand-primary transition shadow-lg"
+        >
+          Hemen Teklif Al
+        </a>
+
+        {/* MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) */}
+        <div className="md:hidden">
+          <button className={isScrolled ? 'text-brand-primary' : 'text-white'}>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
         </div>
 
-        {/* Teklif Al Butonu */}
-        <Link href="#contact" className="bg-white text-brand-primary px-5 py-2 rounded font-bold hover:bg-[#38BDF8] hover:text-white transition shadow-lg text-[12px] uppercase tracking-wider">
-          TEKLİF AL
-        </Link>
       </div>
     </nav>
   );
