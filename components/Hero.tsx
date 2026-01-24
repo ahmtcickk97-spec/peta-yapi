@@ -1,35 +1,43 @@
 const Hero = () => {
   return (
-    <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
-      {/* Arka Plan Görseli (Geçici olarak profesyonel bir inşaat görseli ekledim) */}
+    <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+      {/* Arka Plan Görseli */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-105"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] scale-105 hover:scale-100"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070')`,
         }}
       >
-        {/* Görselin üzerine koyu bir katman ekleyerek yazıların okunmasını sağlıyoruz */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        {/* Lacivert Ağırlıklı Overlay - Kurumsal hissi artırır */}
+        <div className="absolute inset-0 bg-[#001F3F]/60 backdrop-blur-[2px]"></div>
       </div>
 
       {/* İçerik Alanı */}
-      <div className="relative z-10 text-center px-4 max-w-4xl">
-        <h1 className="text-4xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-          Geleceği Güvenle <br />
-          <span className="text-orange-500 underline decoration-white/20">İnşa Ediyoruz</span>
+      <div className="relative z-10 text-center px-4 max-w-5xl">
+        <h1 className="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter">
+          GÜVENLE DÖNÜŞÜM <br />
+          <span className="text-white bg-[#001F3F] px-4 py-1">SAĞLAM YARINLAR</span>
         </h1>
-        <p className="text-lg md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto font-light">
-          Peta Yapı olarak, modern mimariyi mühendislik disipliniyle birleştiriyor, yaşam alanlarınıza değer katıyoruz.
+        
+        <p className="text-lg md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto font-medium tracking-wide">
+          Peta Yapı ile modern mimari ve mühendislik disiplinini buluşturuyoruz. Geleceğin yapılarını bugünden güvenle inşa ediyoruz.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button className="bg-orange-500 hover:bg-orange-600 text-white px-10 py-4 rounded-md font-bold text-lg transition-all shadow-lg hover:shadow-orange-500/50">
+
+        <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          {/* Ana Buton - Kurumsal Lacivert */}
+          <button className="bg-white text-[#001F3F] hover:bg-[#38BDF8] hover:text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all shadow-2xl active:scale-95">
             PROJELERİMİZİ İNCELE
           </button>
-          <button className="bg-transparent border-2 border-white hover:bg-white hover:text-slate-900 text-white px-10 py-4 rounded-md font-bold text-lg transition-all">
-            TEKLİF ALIN
+          
+          {/* İkincil Buton - Transparan/Beyaz */}
+          <button className="bg-transparent border-2 border-white/50 hover:border-white text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all active:scale-95">
+            ÜCRETSİZ EKSPERTİZ AL
           </button>
         </div>
       </div>
+
+      {/* Alt Kısım Dekoratif Çizgi (İnşaat/Mimari Teması) */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#38BDF8] to-transparent opacity-50"></div>
     </section>
   );
 };

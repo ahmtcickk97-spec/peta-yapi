@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Sayfa aşağı kaydırıldığında navbar'ın arka planını değiştirir
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -13,56 +12,59 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Dinamik Renk Belirleme
+  const textColor = isScrolled ? 'text-[#001F3F]' : 'text-white';
+  const brandNavy = '#001F3F';
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         
-        {/* LOGO */}
-        <a href="/" className="flex items-center">
-          <img 
-            src="/logo.png" 
-            alt="Peta Yapı Logo" 
-            className={`h-10 w-auto transition-all ${isScrolled ? 'brightness-100' : 'brightness-0 invert'}`} 
-          />
+        {/* ÖZEL PETA YAPI LOGO */}
+        <a href="/" className="flex flex-col items-start leading-none group">
+          <div className="flex items-center">
+            {/* PETA Kısmı */}
+            <span className={`text-2xl md:text-3xl font-black tracking-tighter transition-colors duration-300 ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}>
+              PETA
+            </span>
+            {/* YAPI Bloğu */}
+            <span className={`ml-1 px-2 py-1 text-2xl md:text-3xl font-black rounded-sm transition-all duration-300 ${isScrolled ? 'bg-[#001F3F] text-white' : 'bg-white text-[#001F3F]'}`}>
+              YAPI
+            </span>
+          </div>
+          {/* Slogan */}
+          <span className={`text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] mt-1 transition-colors duration-300 ${isScrolled ? 'text-[#001F3F]' : 'text-white/80'}`}>
+            Güvenle Dönüşüm Sağlam Yarınlar
+          </span>
         </a>
 
         {/* MENÜ LİNKLERİ */}
         <ul className="hidden md:flex items-center gap-10">
-          <li>
-            <a href="#about" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
-              Hakkımızda
-            </a>
-          </li>
-          <li>
-            <a href="#services" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
-              Hizmetlerimiz
-            </a>
-          </li>
-          <li>
-            <a href="#projects" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
-              Projelerimiz
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className={`${isScrolled ? 'text-brand-primary' : 'text-white'} hover:text-[#38BDF8] transition font-bold uppercase tracking-widest text-xs`}>
-              İletişim
-            </a>
-          </li>
+          {['Hakkımızda', 'Hizmetlerimiz', 'Projelerimiz', 'İletişim'].map((item) => (
+            <li key={item}>
+              <a 
+                href={`#${item.toLowerCase()}`} 
+                className={`${textColor} hover:text-[#38BDF8] transition-colors font-bold uppercase tracking-widest text-[11px]`}
+              >
+                {item}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        {/* WHATSAPP BUTONU (Hızlı Erişim) */}
+        {/* WHATSAPP BUTONU */}
         <a 
           href="https://wa.me/905XXXXXXXXX" 
           target="_blank"
-          className="hidden md:block bg-[#38BDF8] text-white px-6 py-2.5 rounded-full font-bold text-xs uppercase tracking-tighter hover:bg-brand-primary transition shadow-lg"
+          className="hidden md:block bg-[#38BDF8] text-white px-7 py-3 rounded-full font-bold text-[11px] uppercase tracking-wider hover:bg-[#001F3F] transition-all shadow-lg active:scale-95"
         >
           Hemen Teklif Al
         </a>
 
-        {/* MOBİL MENÜ BUTONU (Sadece Mobilde Görünür) */}
+        {/* MOBİL MENÜ BUTONU */}
         <div className="md:hidden">
-          <button className={isScrolled ? 'text-brand-primary' : 'text-white'}>
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button className={textColor}>
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
           </button>
