@@ -54,7 +54,7 @@ const Navbar = () => {
 
         {/* WHATSAPP BUTONU */}
         <a 
-          href="https://wa.me/905XXXXXXXXX" 
+          href="https://wa.me/905325578570" 
           target="_blank"
           className="hidden md:block bg-[#38BDF8] text-white px-7 py-3 rounded-full font-bold text-[11px] uppercase tracking-wider hover:bg-[#001F3F] transition-all shadow-lg active:scale-95"
         >
