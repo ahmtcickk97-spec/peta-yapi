@@ -1,17 +1,12 @@
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      {/* Gezinti Menüsü: Sayfanın en üstünde sabit durur */}
-      <Navbar />
-
+    <>
       {/* Giriş Alanı: İlk karşılama ekranı */}
       <Hero />
 
@@ -34,9 +29,6 @@ export default function Home() {
       <section id="contact" className="bg-gray-50 py-12">
         <ContactForm />
       </section>
-
-      {/* Sayfa Alt Bilgisi: İletişim verileri ve telif hakları */}
-      <Footer />
-    </main>
+    </>
   );
 }
