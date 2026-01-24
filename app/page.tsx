@@ -1,30 +1,28 @@
-import ContactForm from '@/components/ContactForm';
 import Hero from '@/components/Hero';
+import About from "@/components/About";
 import Projects from '@/components/Projects';
-import Services from '@/components/Services'; // 1. ADIM: Hizmetler bileşenini içeri aktardık
+import Services from '@/components/Services';
+import ContactForm from '@/components/ContactForm';
 
 export default function Home() {
   return (
     <main className="min-h-screen">
-      {/* Giriş Alanı */}
+      {/* 1. Giriş Alanı: İlk izlenim burada oluşur */}
       <Hero />
       
-      {/* Hoş Geldiniz Mesajı */}
-      <section className="py-20 bg-white container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-slate-800">Peta Yapı'ya Hoş Geldiniz</h2>
-        <div className="w-16 h-1 bg-orange-500 mx-auto mt-4"></div>
-        <p className="mt-6 text-slate-600 max-w-2xl mx-auto">
-          30 yılı aşkın tecrübemizle Türkiye'nin dört bir yanında sağlam temeller atıyoruz. 
-          Modern mimariyi mühendislik disipliniyle birleştirerek güven inşa ediyoruz.
-        </p>
-      </section>
+      {/* 2. Hakkımızda Bölümü: Vizyon ve Deneyim (Daha önce yaptığımız About bileşeni) */}
+      <About />
 
-      {/* Projelerimiz Bölümü */}
+      {/* 3. Hizmetlerimiz: Ne yapıyoruz? */}
+      <Services /> 
+
+      {/* 4. Projelerimiz: Neler yaptık? (Midyat projesi burada parlayacak) */}
       <Projects />
       
-      {/* 2. ADIM: Hizmetler bölümünü en alta yerleştirdik */}
-      <Services /> 
-      <ContactForm />
+      {/* 5. İletişim: Müşterinin bize ulaşacağı son durak */}
+      <div className="bg-gray-50 py-12">
+        <ContactForm />
+      </div>
     </main>
   );
 }
