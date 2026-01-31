@@ -1,12 +1,11 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Link from 'next/link';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Sayfa kaydırıldığında navbarın stilini (arka plan rengi vb.) değiştirir
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -15,14 +14,14 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Menü Linkleri (id'lerin küçük harf ve Türkçe karaktersiz olmasına dikkat edin)
   const navLinks = [
     { name: 'Anasayfa', href: '#anasayfa' },
     { name: 'Hakkımızda', href: '#hakkimizda' },
-    { name: 'Hizmetlerimiz', href: '#hizmetlerimiz' }, // Bu satırı ekledik
+    { name: 'Hizmetlerimiz', href: '#hizmetlerimiz' },
     { name: 'Projelerimiz', href: '#projelerimiz' },
     { name: 'İletişim', href: '#iletisim' },
   ];
+
   return (
     <nav className={`fixed w-full z-[100] transition-all duration-500 ${
       isScrolled ? 'bg-white shadow-xl py-3' : 'bg-transparent py-6'
@@ -30,19 +29,26 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           
-          {/* LOGO BÖLÜMÜ */}
-          <Link href="#anasayfa" className="flex flex-col group">
-            <span className={`text-2xl md:text-3xl font-black tracking-tighter leading-none transition-colors ${
-              isScrolled ? 'text-[#001F3F]' : 'text-white'
-            }`}>
-              PETA YAPI
-            </span>
-            <span className={`text-[9px] font-bold tracking-[0.4em] uppercase transition-colors ${
-              isScrolled ? 'text-[#38BDF8]' : 'text-white/90'
+          {/* --- YENİ LOGO TASARIMI --- */}
+          <Link href="#anasayfa" className="flex flex-col items-center group">
+            <div className="flex items-center leading-none">
+              {/* PETA: Lacivert Kutu, Beyaz Yazı */}
+              <span className="bg-[#001F3F] text-white px-2 py-1 text-xl md:text-2xl font-black tracking-tighter rounded-sm shadow-sm">
+                PETA
+              </span>
+              {/* YAPI: Açık Mavi Kutu, Lacivert Yazı (Aynı kaldı) */}
+              <span className="ml-1 bg-[#38BDF8] text-[#001F3F] px-2 py-1 text-xl md:text-2xl font-black tracking-tighter rounded-sm shadow-sm">
+                YAPI
+              </span>
+            </div>
+            {/* Alt Yazı */}
+            <span className={`mt-1 text-[8px] md:text-[9px] font-bold tracking-[0.4em] uppercase transition-colors ${
+              isScrolled ? 'text-[#001F3F]' : 'text-white/90'
             }`}>
               İnşaat & Mimarlık
             </span>
           </Link>
+          {/* --- LOGO BİTİŞ --- */}
 
           {/* SAĞ TARAF (Menü + Instagram + Mobil Hamburger) */}
           <div className="flex items-center space-x-4 md:space-x-10">
@@ -62,7 +68,7 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* INSTAGRAM BUTONU (Mobilde ve Masaüstünde Sağ Üstte) */}
+            {/* INSTAGRAM BUTONU */}
             <a 
               href="https://instagram.com/petainsaat" 
               target="_blank" 
@@ -79,20 +85,20 @@ const Navbar = () => {
               </svg>
             </a>
 
-            {/* MOBİL HAMBURGER MENÜ (Hata düzeltildi: Fragment eklendi) */}
+            {/* MOBİL HAMBURGER MENÜ */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden p-1 transition-colors ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}
+              className={`md:hidden p-1 transition-colors z-[120] relative ${isOpen ? 'text-white' : (isScrolled ? 'text-[#001F3F]' : 'text-white')}`}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 {isOpen ? (
                   <path d="M18 6 6 18M6 6l12 12"/>
                 ) : (
-                  <>
+                  <Fragment>
                     <line x1="4" x2="20" y1="12" y2="12"/>
                     <line x1="4" x2="20" y1="6" y2="6"/>
                     <line x1="4" x2="20" y1="18" y2="18"/>
-                  </>
+                  </Fragment>
                 )}
               </svg>
             </button>
@@ -103,8 +109,8 @@ const Navbar = () => {
 
       {/* MOBİL AÇILIR PANEL */}
       <div className={`fixed inset-0 bg-[#001F3F] flex flex-col items-center justify-center transition-all duration-500 ease-in-out ${
-        isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
-      } md:hidden z-[-1]`}>
+        isOpen ? 'opacity-100 visible z-[110]' : 'opacity-0 invisible z-[-1]'
+      } md:hidden`}>
         <div className="flex flex-col items-center space-y-10">
           {navLinks.map((link) => (
             <a 

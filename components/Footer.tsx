@@ -9,22 +9,33 @@ const Footer = () => {
           {/* Logo ve Motto */}
           <div className="space-y-6">
             <div className="flex flex-col items-start leading-none">
+              
+              {/* --- YENİ FOOTER LOGOSU --- */}
               <div className="flex items-center">
-                <span className="text-2xl font-black text-white italic">PETA</span>
-                <span className="ml-1 bg-[#38BDF8] text-[#001F3F] px-2 py-1 text-2xl font-black rounded-sm italic">YAPI</span>
+                {/* PETA: Lacivert Kutu, Beyaz Yazı (Footer'da belli olması için ince çerçeve eklendi) */}
+                <span className="bg-[#001F3F] text-white px-2 py-1 text-2xl font-black tracking-tighter rounded-sm border border-white/10">
+                    PETA
+                </span>
+                {/* YAPI: Açık Mavi Kutu, Lacivert Yazı (Aynı kaldı) */}
+                <span className="ml-1 bg-[#38BDF8] text-[#001F3F] px-2 py-1 text-2xl font-black tracking-tighter rounded-sm">
+                    YAPI
+                </span>
               </div>
+              {/* --- LOGO BİTİŞ --- */}
+
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               İstanbul ve Mardin'in dokusuna uygun, modern mimari ve mühendislik disipliniyle sağlam yarınlar inşa ediyoruz.
             </p>
           </div>
 
-          {/* Hızlı Linkler - ID'ler Navbar ile eşitlendi */}
+          {/* Hızlı Linkler */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-[#38BDF8]">Hızlı Bağlantılar</h4>
             <ul className="space-y-4 text-gray-400 text-sm font-medium">
               <li><a href="#anasayfa" className="hover:text-[#38BDF8] transition-colors">Anasayfa</a></li>
               <li><a href="#hakkimizda" className="hover:text-[#38BDF8] transition-colors">Hakkımızda</a></li>
+              <li><a href="#hizmetlerimiz" className="hover:text-[#38BDF8] transition-colors">Hizmetlerimiz</a></li>
               <li><a href="#projelerimiz" className="hover:text-[#38BDF8] transition-colors">Projelerimiz</a></li>
               <li><a href="#iletisim" className="hover:text-[#38BDF8] transition-colors">İletişim</a></li>
             </ul>
