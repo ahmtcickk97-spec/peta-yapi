@@ -1,13 +1,11 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Instagram, Menu, X } from 'lucide-react'; // İkonlar için lucide-react kullanıyoruz
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Sayfa kaydırıldığında navbar rengini değiştir
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -18,82 +16,77 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-[100] transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg py-3' : 'bg-transparent py-5'
+      isScrolled ? 'bg-white shadow-xl py-3' : 'bg-transparent py-6'
     }`}>
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           
           {/* LOGO */}
-          <Link href="/" className="flex flex-col">
-            <span className={`text-2xl font-black tracking-tighter leading-none ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}>
+          <Link href="/" className="flex flex-col group">
+            <span className={`text-2xl md:text-3xl font-black tracking-tighter leading-none transition-colors ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}>
               PETA YAPI
             </span>
-            <span className={`text-[8px] font-bold tracking-[0.3em] uppercase ${isScrolled ? 'text-[#38BDF8]' : 'text-white/80'}`}>
+            <span className={`text-[9px] font-bold tracking-[0.4em] uppercase transition-colors ${isScrolled ? 'text-[#38BDF8]' : 'text-white/90'}`}>
               İnşaat & Mimarlık
             </span>
           </Link>
 
-          {/* MASAÜSTÜ MENÜ */}
-          <div className="hidden md:flex items-center space-x-10">
-            {['Anasayfa', 'Hakkımızda', 'Projelerimiz', 'İletişim'].map((item) => (
-              <Link 
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className={`text-xs font-black uppercase tracking-widest transition-colors hover:text-[#38BDF8] ${
-                  isScrolled ? 'text-[#001F3F]' : 'text-white'
-                }`}
-              >
-                {item}
-              </Link>
-            ))}
+          {/* SAĞ TARAF (Menü ve Instagram) */}
+          <div className="flex items-center space-x-5 md:space-x-10">
             
-            {/* Masaüstü Instagram */}
-            <a 
-              href="https://instagram.com/petainsaat" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={`p-2 rounded-full transition-all hover:scale-110 ${
-                isScrolled ? 'bg-[#001F3F] text-white' : 'bg-white text-[#001F3F]'
-              }`}
-            >
-              <Instagram size={18} />
-            </a>
-          </div>
+            {/* Masaüstü Linkler */}
+            <div className="hidden md:flex items-center space-x-8">
+              {['Anasayfa', 'Hakkımızda', 'Projelerimiz', 'İletişim'].map((item) => (
+                <Link 
+                  key={item}
+                  href={`#${item.toLowerCase().replace('ı', 'i')}`}
+                  className={`text-[11px] font-black uppercase tracking-[0.2em] transition-all hover:text-[#38BDF8] ${
+                    isScrolled ? 'text-[#001F3F]' : 'text-white'
+                  }`}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
 
-          {/* MOBİL SAĞ ALAN (Instagram + Menü) */}
-          <div className="flex md:hidden items-center space-x-4">
-            {/* MOBİL INSTAGRAM BUTONU - İstediğin yer tam burası! */}
+            {/* INSTAGRAM BUTONU (Hem Mobil Hem Masaüstü İçin Burada) */}
             <a 
               href="https://instagram.com/petainsaat" 
               target="_blank" 
               rel="noopener noreferrer"
-              className={`p-2.5 rounded-full shadow-lg active:scale-90 transition-all ${
+              aria-label="Instagram"
+              className={`p-2.5 rounded-full shadow-lg transition-all hover:scale-110 active:scale-95 ${
                 isScrolled ? 'bg-[#001F3F] text-white' : 'bg-white text-[#001F3F]'
               }`}
             >
-              <Instagram size={20} />
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             </a>
 
             {/* MOBİL MENÜ BUTONU */}
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className={`p-2 ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}
+              className={`md:hidden p-1 transition-colors ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? (
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+              )}
             </button>
           </div>
+
         </div>
       </div>
 
       {/* MOBİL MENÜ PANELİ */}
-      <div className={`fixed inset-0 bg-[#001F3F] transition-transform duration-500 ${isOpen ? 'translate-x-0' : 'translate-x-full'} z-[99] md:hidden`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8">
+      <div className={`fixed inset-0 bg-[#001F3F] flex flex-col items-center justify-center transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} z-[99] md:hidden`}>
+        <div className="flex flex-col items-center space-y-10">
           {['Anasayfa', 'Hakkımızda', 'Projelerimiz', 'İletişim'].map((item) => (
             <Link 
               key={item}
-              href={`#${item.toLowerCase()}`}
+              href={`#${item.toLowerCase().replace('ı', 'i')}`}
               onClick={() => setIsOpen(false)}
-              className="text-white text-2xl font-black uppercase tracking-widest hover:text-[#38BDF8]"
+              className="text-white text-3xl font-black uppercase tracking-[0.2em] hover:text-[#38BDF8] transition-colors"
             >
               {item}
             </Link>

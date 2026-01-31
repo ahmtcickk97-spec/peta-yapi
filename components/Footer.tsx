@@ -36,7 +36,7 @@ const Footer = () => {
             <ul className="space-y-4 text-gray-400 text-sm">
               <li className="flex items-start">
                 <span className="mr-3 mt-1">📍</span>
-                <span>Midyat, Mardin / Türkiye</span>
+                <span>Zeytinburnu, İstanbul / Türkiye</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-3">📞</span>
