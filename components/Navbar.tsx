@@ -19,10 +19,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Anasayfa', href: '#anasayfa' },
     { name: 'Hakkımızda', href: '#hakkimizda' },
+    { name: 'Hizmetlerimiz', href: '#hizmetlerimiz' }, // Bu satırı ekledik
     { name: 'Projelerimiz', href: '#projelerimiz' },
     { name: 'İletişim', href: '#iletisim' },
   ];
-
   return (
     <nav className={`fixed w-full z-[100] transition-all duration-500 ${
       isScrolled ? 'bg-white shadow-xl py-3' : 'bg-transparent py-6'
