@@ -38,7 +38,7 @@ const About = () => {
             </h2>
             
             <p className="text-gray-600 text-base md:text-lg mb-8 leading-relaxed font-medium">
-              Peta Yapı olarak, merkezimizin bulunduğu **Zeytinburnu** başta olmak üzere, İstanbul'un her iki yakasında modern mimari ve mühendislik disipliniyle değer inşa ediyoruz. Şehrin dokusuna saygı duyan, deprem yönetmeliğine tam uyumlu ve estetik kaygısı yüksek projelerimizle, İstanbul'un kentsel dönüşüm sürecine öncülük ediyoruz.
+              Peta Yapı olarak, merkezimizin bulunduğu Zeytinburnu başta olmak üzere, İstanbul'un her iki yakasında modern mimari ve mühendislik disipliniyle değer inşa ediyoruz. Şehrin dokusuna saygı duyan, deprem yönetmeliğine tam uyumlu ve estetik kaygısı yüksek projelerimizle, İstanbul'un kentsel dönüşüm sürecine öncülük ediyoruz.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-gray-100">
