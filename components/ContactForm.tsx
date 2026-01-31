@@ -1,6 +1,6 @@
 const ContactForm = () => {
   return (
-    <section id="contact" className="py-24 bg-slate-50">
+    <section id="iletisim" className="py-24 bg-slate-50">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col md:flex-row border border-slate-100">
           

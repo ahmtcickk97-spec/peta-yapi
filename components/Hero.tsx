@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
+    <section id="anasayfa" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
       {/* ARKA PLAN - Orijinal İnşaat Görseli */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] scale-105 hover:scale-100"

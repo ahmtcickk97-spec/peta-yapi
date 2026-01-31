@@ -62,7 +62,7 @@ const Projects = () => {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
 
   return (
-    <section id="projects" className="py-12 md:py-24 bg-white">
+    <section id="projelerimiz" className="py-12 md:py-24 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-black text-[#001F3F] uppercase tracking-tighter mb-4">
