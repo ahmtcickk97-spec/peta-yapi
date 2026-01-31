@@ -1,53 +1,48 @@
 import React from 'react';
+import Image from 'next/image';
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-gray-50">
+    <section id="hakkımızda" className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           
-          {/* Sol Taraf: Görsel Alanı */}
+          {/* GÖRSEL ALANI - Bina Fotoğrafı Artık Burada */}
           <div className="lg:w-1/2 relative">
-            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
-              <img 
-                src="/projects/midyat/midyat-ana.jpeg" 
-                alt="Peta Yapı Vizyon" 
-                className="w-full h-[500px] object-cover"
+            <div className="relative h-[400px] md:h-[600px] w-full rounded-[3rem] overflow-hidden shadow-2xl">
+              <Image 
+                src="/projects/midyat/ana-cephe.webp" 
+                alt="Peta Yapı Proje" 
+                fill 
+                className="object-cover"
               />
             </div>
-            {/* Dekoratif Mavi Kutu */}
-            <div className="absolute -bottom-8 -right-8 w-64 h-64 bg-[#38BDF8] rounded-[3rem] -z-10 opacity-20 hidden lg:block"></div>
+            {/* Dekoratif Lacivert Kutu */}
+            <div className="absolute -bottom-6 -right-6 bg-[#001F3F] text-white p-8 rounded-2xl hidden md:block">
+              <p className="text-4xl font-black">10+</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-[#38BDF8]">Yıllık Tecrübe</p>
+            </div>
           </div>
 
-          {/* Sağ Taraf: Metin Alanı */}
-          <div className="lg:w-1/2 space-y-8">
-            <div className="space-y-4">
-              <span className="text-[#38BDF8] font-bold text-sm tracking-[0.3em] uppercase">Biz Kimiz?</span>
-              <h2 className="text-5xl font-black text-brand-primary uppercase leading-tight tracking-tighter">
-                Geleceği Güvenle <br /> İnşa Ediyoruz
-              </h2>
-              <div className="h-1.5 w-20 bg-[#38BDF8] rounded-full"></div>
-            </div>
-
-            <p className="text-gray-600 text-lg leading-relaxed font-medium">
-              Peta Yapı olarak, modern mimariyi mühendislik disipliniyle birleştirerek "Sağlam Yarınlar" inşa ediyoruz. 
-              Özellikle deprem yönetmeliğine tam uyumlu, estetik ve işlevsel yaşam alanları üretmek temel misyonumuzdur.
+          {/* METİN ALANI */}
+          <div className="lg:w-1/2">
+            <h4 className="text-[#38BDF8] font-black text-sm tracking-[0.3em] uppercase mb-4">Biz Kimiz?</h4>
+            <h2 className="text-4xl md:text-6xl font-black text-[#001F3F] mb-8 leading-tight uppercase tracking-tighter">
+              Geleceği Güçlü <br /> Temellerle İnşa Ediyoruz
+            </h2>
+            <p className="text-gray-600 text-lg mb-8 leading-relaxed font-medium">
+              Peta Yapı, modern mimari anlayışı ve mühendislik disiplinini birleştirerek güvenli yaşam alanları inşa eder. Özellikle Mardin ve çevresinde kentsel dönüşüm ve modern konut projelerinde öncü bir rol üstleniyoruz.
             </p>
-
-            <div className="grid grid-cols-2 gap-8 pt-4">
-              <div className="space-y-2">
-                <h4 className="text-3xl font-black text-brand-primary tracking-tighter">15+</h4>
-                <p className="text-gray-500 text-sm font-bold uppercase tracking-widest">Yıllık Deneyim</p>
+            <div className="grid grid-cols-2 gap-8 mb-10">
+              <div>
+                <h5 className="font-black text-[#001F3F] mb-2 uppercase text-sm tracking-widest">Vizyonumuz</h5>
+                <p className="text-gray-500 text-sm">Depreme dayanıklı, estetik ve sürdürülebilir yapılarla şehre değer katmak.</p>
               </div>
-              <div className="space-y-2">
-                <h4 className="text-3xl font-black text-brand-primary tracking-tighter">100+</h4>
-                <p className="text-gray-500 text-sm font-bold uppercase tracking-widest">Tamamlanan Konut</p>
+              <div>
+                <h5 className="font-black text-[#001F3F] mb-2 uppercase text-sm tracking-widest">Misyonumuz</h5>
+                <p className="text-gray-500 text-sm">Müşteri memnuniyetini merkeze alarak, her projede en yüksek kaliteyi sunmak.</p>
               </div>
             </div>
-
-            <p className="text-gray-500 italic border-l-4 border-[#38BDF8] pl-6 py-2">
-              "Sadece bina değil, huzurla yaşanacak yuvalar inşa etmek için buradayız."
-            </p>
           </div>
 
         </div>
