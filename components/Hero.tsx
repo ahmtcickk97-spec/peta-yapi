@@ -1,35 +1,50 @@
+"use client";
 import React from 'react';
+import Link from 'next/link';
 
 const Hero = () => {
   return (
-    <section id="anasayfa" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-      {/* ARKA PLAN - Orijinal İnşaat Görseli */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] scale-105 hover:scale-100"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070')`,
-        }}
-      >
-        <div className="absolute inset-0 bg-[#001F3F]/60 backdrop-blur-[2px]"></div>
+    <section id="anasayfa" className="relative h-[90vh] flex items-center overflow-hidden bg-[#001F3F]">
+      {/* Arka Plan Görseli ve Overlay */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#001F3F] via-[#001F3F]/80 to-transparent z-10" />
+        <img 
+          src="/projects/midyat/ana-cephe.webp" 
+          alt="Peta Yapı Projeleri" 
+          className="w-full h-full object-cover opacity-60"
+        />
       </div>
 
-      <div className="relative z-10 text-center px-4 max-w-5xl">
-        <h1 className="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter">
-          GÜVENLE DÖNÜŞÜM <br />
-          <span className="text-white bg-[#38BDF8] px-4 py-1 inline-block mt-2 shadow-lg">SAĞLAM YARINLAR</span>
-        </h1>
-        
-        <p className="text-lg md:text-2xl text-slate-100 mb-10 max-w-2xl mx-auto font-medium tracking-wide">
-          Peta Yapı ile modern mimari ve mühendislik disiplinini buluşturuyoruz. Geleceğin yapılarını bugünden güvenle inşa ediyoruz.
-        </p>
+      <div className="container mx-auto px-4 relative z-20">
+        <div className="max-w-3xl">
+          <h4 className="text-[#38BDF8] font-black text-sm md:text-base tracking-[0.4em] uppercase mb-4 animate-fade-in">
+            Geleceği İnşa Ediyoruz
+          </h4>
+          <h1 className="text-4xl md:text-7xl font-black text-white mb-8 leading-[1.1] uppercase tracking-tighter">
+            Modern Yaşamın <br /> 
+            <span className="text-[#38BDF8]">Yeni Mimarı</span>
+          </h1>
+          <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-xl leading-relaxed font-medium">
+            Zeytinburnu'ndan tüm İstanbul'a uzanan güvenli, estetik ve depreme dayanıklı konut projelerimizle hayatınıza değer katıyoruz.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a href="#projects" className="w-full sm:w-auto bg-white text-[#001F3F] hover:bg-[#38BDF8] hover:text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all shadow-2xl active:scale-95 text-center">
-            PROJELERİMİZİ İNCELE
-          </a>
-          <a href="#contact" className="w-full sm:w-auto bg-transparent border-2 border-white/50 hover:border-white text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all active:scale-95 text-center">
-            ÜCRETSİZ EKSPERTİZ AL
-          </a>
+          <div className="flex flex-col sm:flex-row gap-5">
+            {/* TUŞ 1: Projelerimizi İncele */}
+            <a 
+              href="#projelerimiz" 
+              className="bg-[#38BDF8] text-[#001F3F] px-8 py-5 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white transition-all shadow-xl text-center active:scale-95"
+            >
+              Projelerimizi İncele
+            </a>
+
+            {/* TUŞ 2: Ücretsiz Ekspertiz Al */}
+            <a 
+              href="#iletisim" 
+              className="bg-transparent border-2 border-white/30 text-white px-8 py-5 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white hover:text-[#001F3F] hover:border-white transition-all text-center active:scale-95"
+            >
+              Ücretsiz Ekspertiz Al
+            </a>
+          </div>
         </div>
       </div>
     </section>

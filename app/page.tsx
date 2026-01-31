@@ -4,18 +4,22 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import Projects from "@/components/Projects";
 import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer"; // Buraya ekledik
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton"; // Buraya ekledik
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative"> {/* 'relative' eklemek z-index yönetimi için iyidir */}
       <Navbar />
       <Hero />
       <div id="hakkimizda"><About /></div>
       <div id="hizmetlerimiz"><Services /></div>
       <div id="projelerimiz"><Projects /></div>
       <div id="iletisim"><ContactForm /></div>
-      <Footer /> {/* Ve buraya ekledik */}
+      <Footer />
+      
+      {/* WhatsApp Butonu en altta, her şeyin üstünde görünecek */}
+      <WhatsAppButton /> 
     </main>
   );
 }
