@@ -2,18 +2,23 @@ import type { Metadata } from "next";
 import "./globals.css"; 
 
 export const metadata: Metadata = {
-  // Sitenin temel adresi (Resimlerin tam yolunu bulması için kritik)
+  // Sitenin ana adresi (Tüm görsel yollarını tam adrese çevirir)
   metadataBase: new URL("https://peta-yapi.vercel.app"),
 
   title: "Peta Yapı | İstanbul Zeytinburnu & Kağıthane Konut Projeleri",
-  description: "Peta Yapı; Zeytinburnu, Kağıthane ve tüm İstanbul genelinde modern konut projeleri, kentsel dönüşüm ve lüks mimari çözümler sunar. Güvenli ve estetik yaşam alanları inşa ediyoruz.",
-  keywords: ["Peta Yapı", "Zeytinburnu inşaat firmaları", "Kağıthane konut projeleri", "Kentsel dönüşüm İstanbul", "Lüks daire Zeytinburnu", "Peta Yapı Kağıthane", "İstanbul mimarlık ofisi"],
+  description: "Peta Yapı; İstanbul genelinde modern konut projeleri ve kentsel dönüşüm çözümleri sunar.",
   
+  // 1. Google Favicon Sorunu İçin Kesin Tanımlama
   icons: {
-    icon: "/icon.png",
+    icon: [
+      { url: "/icon.png", width: 32, height: 32 },
+      { url: "/icon.png", width: 192, height: 192 },
+      { url: "/icon.png", width: 512, height: 512 },
+    ],
     apple: "/icon.png",
   },
 
+  // 2. WhatsApp Görseli İçin OpenGraph Ayarı
   openGraph: {
     title: "Peta Yapı | Geleceği İnşa Ediyoruz",
     description: "İstanbul'un kalbinde modern ve güvenli projeler.",
@@ -23,25 +28,12 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg", // metadataBase sayesinde otomatik tam adrese dönüşür
+        url: "/og-image.jpg", // metadataBase sayesinde otomatik tam yol olur
         width: 1200,
         height: 630,
-        alt: "Peta Yapı Modern Projeler",
+        alt: "Peta Yapı Projeleri",
       },
     ],
-  },
-  
-  // Twitter için kart görünümü (Paylaşımlarda etkili olur)
-  twitter: {
-    card: "summary_large_image",
-    title: "Peta Yapı | İstanbul'un Güvenilir İnşası",
-    description: "Modern mimari ve sağlam yapılar.",
-    images: ["/og-image.jpg"],
-  },
-
-  robots: {
-    index: true,
-    follow: true,
   },
 };
 
