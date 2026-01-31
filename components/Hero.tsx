@@ -1,21 +1,28 @@
 "use client";
 import React from 'react';
+import Image from 'next/image'; // Next.js'in hız sihirbazı
 
 const Hero = () => {
   return (
     <section id="anasayfa" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-      {/* İnşaat Temalı Arka Plan */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[2000ms] scale-105" 
-        style={{backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070')"}}
-      >
-        {/* Koyu Overlay (Yazıların okunması için) */}
-        <div className="absolute inset-0 bg-[#001F3F]/60 backdrop-blur-[1px]"></div>
+      {/* OPTİMİZE EDİLMİŞ ARKA PLAN */}
+      <div className="absolute inset-0 z-0">
+        <Image 
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070" 
+          alt="Peta Yapı İnşaat" 
+          fill // Tüm alanı kapla
+          priority // SAYFA AÇILIRKEN İLK BUNU YÜKLE (Hızın anahtarı)
+          quality={75} // Boyutu küçültür ama kaliteyi bozmaz
+          className="object-cover transition-transform duration-[2000ms] scale-105"
+          sizes="100vw"
+        />
+        {/* Koyu Overlay & Blur */}
+        <div className="absolute inset-0 bg-[#001F3F]/60 backdrop-blur-[1px] z-10"></div>
       </div>
 
-      {/* İçerik Alanı */}
-      <div className="relative z-10 text-center px-4 max-w-5xl">
-        <h1 className="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter">
+      {/* İçerik Alanı (Z-index artırıldı) */}
+      <div className="relative z-20 text-center px-4 max-w-5xl">
+        <h1 className="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter uppercase">
           GÜVENLE DÖNÜŞÜM <br />
           <span className="text-white bg-[#001F3F] px-4 py-1">SAĞLAM YARINLAR</span>
         </h1>
@@ -25,7 +32,6 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
-          {/* Çalışan Tuş 1 */}
           <a 
             href="#projelerimiz" 
             className="bg-white text-[#001F3F] px-10 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-[#38BDF8] hover:text-white transition-all shadow-2xl active:scale-95"
@@ -33,7 +39,6 @@ const Hero = () => {
             PROJELERİMİZİ İNCELE
           </a>
 
-          {/* Çalışan Tuş 2 */}
           <a 
             href="#iletisim" 
             className="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white hover:text-[#001F3F] transition-all active:scale-95"

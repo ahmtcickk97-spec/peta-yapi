@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-// Proje tipini tanımlayalım (TypeScript için)
+// 1. Tip Tanımlaması
 type ProjectType = {
   id: string;
   title: string;
@@ -10,32 +10,26 @@ type ProjectType = {
   description: string;
   category: string;
   details: string[];
-  status: "completed" | "ongoing"; // Proje durumu: Tamamlanmış veya Devam Eden
-  // Devam eden projeler için görsel alanları:
-  currentImage?: string; // Mevcut durum (Temel fotosu)
-  futureImage?: string;  // Gelecek vizyonu (Yapay zeka render)
-  // Tamamlanmış projeler için görsel alanları:
+  status: "completed" | "ongoing";
+  currentImage?: string; 
+  futureImage?: string;  
   mainImage?: string;
   gallery?: string[];
 };
 
+// 2. Proje Verileri
 const projects: ProjectType[] = [
-  // --- YENİ PROJE: KAĞITHANE (DEVAM EDİYOR) ---
   {
     id: "kagithane-projesi",
     title: "Kağıthane Prestij Kule",
     location: "İstanbul / Kağıthane (Ana Cadde)",
-    description: "İstanbul'un kalbinde, Levent iş merkezlerine komşu lokasyonda yükselen yeni projemiz. Şehrin dinamizmini modern mimari ve yüksek yatırım değeriyle buluşturuyoruz. Temel aşamasında avantajlı fırsatlar devam ediyor.",
+    description: "İstanbul'un kalbinde, Levent iş merkezlerine komşu lokasyonda yükselen yeni projemiz. Şehrin dinamizmini modern mimari ve yüksek yatırım değeriyle buluşturuyoruz.",
     category: "Karma Proje (Konut + Ticari)",
     details: ["Temel Aşamasında", "Levent'e 5 Dk", "Yüksek Kira Getirisi", "Metroya Yakın"],
-    status: "ongoing", // BU ÖNEMLİ: Durumu "devam ediyor" olarak işaretledik.
-    
-    // FOTOĞRAFLAR: Klasörüne bu isimlerle (veya kendi isimlerinle) eklemelisin.
-    currentImage: "/projects/kagithane/temel.webp",      // Şantiye/Temel fotoğrafı
-    futureImage: "/projects/kagithane/render.webp",      // Yapay zeka bitmiş hali
+    status: "ongoing",
+    currentImage: "/projects/kagithane/temel.webp",
+    futureImage: "/projects/kagithane/render.webp",
   },
-
-  // --- MEVCUT PROJE: MİDYAT (TAMAMLANDI) ---
   {
     id: "midyat-modern-konut",
     title: "Midyat Modern Konutları",
@@ -72,44 +66,68 @@ const Projects = () => {
         </div>
 
         <div className="max-w-6xl mx-auto space-y-16 md:space-y-28">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <div key={project.id} className="bg-gray-50 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border border-gray-100">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 
-                {/* --- GÖRSEL ALANI (SOL) --- */}
+                {/* --- GÖRSEL ALANI --- */}
                 <div className="p-4 md:p-8 bg-white h-full">
-                  
-                  {/* DURUM KONTROLÜ: Eğer proje devam ediyorsa 2'li görsel göster */}
                   {project.status === "ongoing" ? (
                     <div className="flex flex-col gap-6 h-full justify-center">
-                      {/* Üstteki Foto: Gelecek Vizyonu (Render) */}
-                      <div className="relative h-[220px] md:h-[280px] rounded-[1.5rem] overflow-hidden shadow-lg cursor-zoom-in group" onClick={() => setSelectedImg(project.futureImage!)}>
-                         <Image src={project.futureImage!} alt="Gelecek Vizyonu" fill className="object-cover transition-transform duration-700 group-hover:scale-105" priority />
-                         <div className="absolute top-3 left-3 bg-[#38BDF8] text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
+                      <div className="relative h-[220px] md:h-[280px] rounded-[1.5rem] overflow-hidden shadow-lg cursor-zoom-in group" onClick={() => setSelectedImg(project.futureImage || null)}>
+                         <Image 
+                           src={project.futureImage || ""} 
+                           alt="Gelecek Vizyonu" 
+                           fill 
+                           className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                           sizes="(max-width: 768px) 100vw, 500px"
+                           quality={75}
+                           priority={index === 0}
+                         />
+                         <div className="absolute top-3 left-3 bg-[#38BDF8] text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm z-10">
                            PROJE BİTİŞ VİZYONU (RENDER)
                          </div>
                       </div>
-                      {/* Alttaki Foto: Mevcut Durum (Temel) */}
-                      <div className="relative h-[220px] md:h-[280px] rounded-[1.5rem] overflow-hidden shadow-lg cursor-zoom-in group" onClick={() => setSelectedImg(project.currentImage!)}>
-                         <Image src={project.currentImage!} alt="Mevcut Durum" fill className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" />
-                         <div className="absolute top-3 left-3 bg-gray-800 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm">
+                      <div className="relative h-[220px] md:h-[280px] rounded-[1.5rem] overflow-hidden shadow-lg cursor-zoom-in group" onClick={() => setSelectedImg(project.currentImage || null)}>
+                         <Image 
+                           src={project.currentImage || ""} 
+                           alt="Mevcut Durum" 
+                           fill 
+                           className="object-cover transition-transform duration-700 group-hover:scale-105 grayscale hover:grayscale-0" 
+                           sizes="(max-width: 768px) 100vw, 500px"
+                           quality={75}
+                         />
+                         <div className="absolute top-3 left-3 bg-gray-800 text-white text-[9px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm z-10">
                            MEVCUT DURUM (ŞANTİYE)
                          </div>
                       </div>
                     </div>
                   ) : (
-                    // DURUM KONTROLÜ: Eğer proje bitmişse eski usul tek büyük + galeri göster
                     <div className="space-y-4">
-                      <div className="relative h-[250px] sm:h-[350px] md:h-[500px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-lg cursor-zoom-in group" onClick={() => setSelectedImg(project.mainImage!)}>
-                        <Image src={project.mainImage!} alt={project.title} fill className="object-cover transition-transform duration-700 group-hover:scale-105" priority />
-                        <div className="absolute top-4 left-4 bg-[#001F3F] text-white text-[9px] font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-xl">{project.category}</div>
+                      <div className="relative h-[250px] sm:h-[350px] md:h-[500px] rounded-[1.5rem] md:rounded-[2rem] overflow-hidden shadow-lg cursor-zoom-in group" onClick={() => setSelectedImg(project.mainImage || null)}>
+                        <Image 
+                          src={project.mainImage || ""} 
+                          alt={project.title} 
+                          fill 
+                          className="object-cover transition-transform duration-700 group-hover:scale-105" 
+                          sizes="(max-width: 768px) 100vw, 600px"
+                          quality={80}
+                        />
+                        <div className="absolute top-4 left-4 bg-[#001F3F] text-white text-[9px] font-bold px-4 py-2 rounded-full uppercase tracking-widest shadow-xl z-10">{project.category}</div>
                       </div>
                       {project.gallery && (
                         <div className="relative">
                           <div className="flex gap-3 overflow-x-auto pb-4 pt-2 scrollbar-thin scrollbar-thumb-[#38BDF8] snap-x">
                             {project.gallery.map((img, i) => (
                               <div key={i} onClick={() => setSelectedImg(img)} className="relative h-20 w-28 md:h-24 md:w-32 flex-shrink-0 rounded-xl overflow-hidden cursor-pointer border-2 border-transparent hover:border-[#38BDF8] transition-all snap-start shadow-sm">
-                                <Image src={img} alt={`Galeri ${i}`} fill className="object-cover" />
+                                <Image 
+                                  src={img} 
+                                  alt={`Galeri ${i}`} 
+                                  fill 
+                                  className="object-cover" 
+                                  sizes="150px"
+                                  quality={60}
+                                />
                               </div>
                             ))}
                           </div>
@@ -119,7 +137,7 @@ const Projects = () => {
                   )}
                 </div>
 
-                {/* --- DETAY ALANI (SAĞ) - Her ikisi için de aynı --- */}
+                {/* --- DETAY ALANI --- */}
                 <div className="p-8 md:p-16 flex flex-col justify-center">
                   <div className="flex items-center text-[#38BDF8] font-bold text-xs md:text-sm tracking-[0.2em] uppercase mb-4">
                     <span className="mr-2">📍</span> {project.location}
@@ -137,14 +155,12 @@ const Projects = () => {
                       </span>
                     ))}
                   </div>
-                  {/* Devam Eden Projeler İçin Ekstra Buton */}
                   {project.status === 'ongoing' && (
-                    <a href="#contact" className="mt-8 inline-block text-center bg-[#001F3F] text-white hover:bg-[#38BDF8] px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider transition-all w-full md:w-auto">
+                    <a href="#iletisim" className="mt-8 inline-block text-center bg-[#001F3F] text-white hover:bg-[#38BDF8] px-6 py-3 rounded-lg font-bold text-xs uppercase tracking-wider transition-all w-full md:w-auto">
                       Bilgi ve Teklif Alın
                     </a>
                   )}
                 </div>
-
               </div>
             </div>
           ))}
@@ -154,8 +170,15 @@ const Projects = () => {
       {/* LIGHTBOX */}
       {selectedImg && (
         <div className="fixed inset-0 z-[100] bg-[#001F3F]/98 backdrop-blur-md flex items-center justify-center p-4 cursor-zoom-out" onClick={() => setSelectedImg(null)}>
-          <div className="relative w-full h-[70vh] md:h-full max-w-6xl">
-            <Image src={selectedImg} alt="Büyük Görünüm" fill className="object-contain" />
+          <div className="relative w-full h-full max-w-6xl">
+            <Image 
+              src={selectedImg} 
+              alt="Büyük Görünüm" 
+              fill 
+              className="object-contain" 
+              sizes="100vw"
+              quality={90}
+            />
           </div>
           <button className="absolute top-6 right-6 text-white text-4xl">&times;</button>
         </div>
