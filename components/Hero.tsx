@@ -1,3 +1,5 @@
+import React from 'react';
+
 const Hero = () => {
   return (
     <section className="relative h-[85vh] flex items-center justify-center overflow-hidden">
@@ -16,23 +18,29 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 max-w-5xl">
         <h1 className="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter">
           GÜVENLE DÖNÜŞÜM <br />
-          <span className="text-white bg-[#001F3F] px-4 py-1">SAĞLAM YARINLAR</span>
+          <span className="text-white bg-[#001F3F] px-4 py-1 inline-block mt-2">SAĞLAM YARINLAR</span>
         </h1>
         
         <p className="text-lg md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto font-medium tracking-wide">
           Peta Yapı ile modern mimari ve mühendislik disiplinini buluşturuyoruz. Geleceğin yapılarını bugünden güvenle inşa ediyoruz.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          {/* Ana Buton - Kurumsal Lacivert */}
-          <button className="bg-white text-[#001F3F] hover:bg-[#38BDF8] hover:text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all shadow-2xl active:scale-95">
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          {/* Ana Buton - Projelere Gider */}
+          <a 
+            href="#projects"
+            className="w-full sm:w-auto bg-white text-[#001F3F] hover:bg-[#38BDF8] hover:text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all shadow-2xl active:scale-95 text-center"
+          >
             PROJELERİMİZİ İNCELE
-          </button>
+          </a>
           
-          {/* İkincil Buton - Transparan/Beyaz */}
-          <button className="bg-transparent border-2 border-white/50 hover:border-white text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all active:scale-95">
+          {/* İkincil Buton - İletişim Formuna (Ekspertiz) Gider */}
+          <a 
+            href="#contact"
+            className="w-full sm:w-auto bg-transparent border-2 border-white/50 hover:border-white text-white px-10 py-4 rounded-sm font-black text-sm uppercase tracking-[0.2em] transition-all active:scale-95 text-center"
+          >
             ÜCRETSİZ EKSPERTİZ AL
-          </button>
+          </a>
         </div>
       </div>
 
