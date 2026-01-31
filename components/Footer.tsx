@@ -10,14 +10,14 @@ const Footer = () => {
           <div className="space-y-6">
             <div className="flex flex-col items-start leading-none">
               
-              {/* --- YENİ FOOTER LOGOSU --- */}
+              {/* --- YENİ FOOTER LOGOSU (GÜNCELLENDİ) --- */}
               <div className="flex items-center">
-                {/* PETA: Lacivert Kutu, Beyaz Yazı (Footer'da belli olması için ince çerçeve eklendi) */}
+                {/* PETA: Lacivert Kutu, Beyaz Yazı (İnce çerçeveli) */}
                 <span className="bg-[#001F3F] text-white px-2 py-1 text-2xl font-black tracking-tighter rounded-sm border border-white/10">
                     PETA
                 </span>
-                {/* YAPI: Açık Mavi Kutu, Lacivert Yazı (Aynı kaldı) */}
-                <span className="ml-1 bg-[#38BDF8] text-[#001F3F] px-2 py-1 text-2xl font-black tracking-tighter rounded-sm">
+                {/* YAPI: Sadece Beyaz Yazı (Kutu kaldırıldı) */}
+                <span className="ml-1 text-white text-2xl font-black tracking-tighter leading-none self-center">
                     YAPI
                 </span>
               </div>

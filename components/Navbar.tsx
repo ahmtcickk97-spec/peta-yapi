@@ -29,15 +29,15 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           
-          {/* --- YENİ LOGO TASARIMI --- */}
+          {/* --- YENİ LOGO TASARIMI (GÜNCELLENDİ) --- */}
           <Link href="#anasayfa" className="flex flex-col items-center group">
             <div className="flex items-center leading-none">
               {/* PETA: Lacivert Kutu, Beyaz Yazı */}
               <span className="bg-[#001F3F] text-white px-2 py-1 text-xl md:text-2xl font-black tracking-tighter rounded-sm shadow-sm">
                 PETA
               </span>
-              {/* YAPI: Açık Mavi Kutu, Lacivert Yazı (Aynı kaldı) */}
-              <span className="ml-1 bg-[#38BDF8] text-[#001F3F] px-2 py-1 text-xl md:text-2xl font-black tracking-tighter rounded-sm shadow-sm">
+              {/* YAPI: Sadece Beyaz Yazı (Kutu kaldırıldı) */}
+              <span className={`ml-1 text-xl md:text-2xl font-black tracking-tighter shadow-sm leading-none self-center transition-colors ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}>
                 YAPI
               </span>
             </div>
