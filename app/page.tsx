@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar"; // Eksik olan buydu!
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
@@ -6,29 +7,30 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
   return (
-    <>
-      {/* Giriş Alanı: İlk karşılama ekranı */}
-      <Hero />
+    <main className="min-h-screen">
+      {/* 1. Navigasyon her zaman en üstte durmalı */}
+      <Navbar />
 
-      {/* Hakkımızda Bölümü: Vizyon ve Deneyim */}
-      <section id="about">
+      {/* 2. Bölümler (ID'leri Navbar'daki linklerle eşitledim) */}
+      <div id="anasayfa">
+        <Hero />
+      </div>
+
+      <div id="hakkimizda">
         <About />
-      </section>
+      </div>
 
-      {/* Hizmetlerimiz Bölümü: Sunulan çözümler */}
-      <section id="services">
+      <div id="hizmetlerimiz">
         <Services />
-      </section>
+      </div>
 
-      {/* Projelerimiz Bölümü: Midyat projesi ve diğerleri */}
-      <section id="projects">
+      <div id="projelerimiz">
         <Projects />
-      </section>
+      </div>
 
-      {/* İletişim Formu Bölümü: Müşteri etkileşimi */}
-      <section id="contact" className="bg-gray-50 py-12">
+      <div id="iletisim" className="bg-gray-50">
         <ContactForm />
-      </section>
-    </>
+      </div>
+    </main>
   );
 }
