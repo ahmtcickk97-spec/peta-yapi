@@ -8,7 +8,19 @@ export const metadata: Metadata = {
   title: "Peta Yapı | İstanbul Zeytinburnu & Kağıthane Konut Projeleri",
   description: "Peta Yapı; İstanbul genelinde modern konut projeleri ve kentsel dönüşüm çözümleri sunar.",
   
-  // 1. Google Favicon Sorunu İçin Kesin Tanımlama
+  // 1. Google'a "Asıl adresim budur" diyen mühür (Canonical)
+  // Bu, .vercel.app linkinin aramalardan silinmesini sağlar.
+  alternates: {
+    canonical: "https://www.petayapi.com",
+  },
+
+  // 2. Google Search Console Doğrulaması
+  // Google'dan aldığın "google-site-verification" kodunu buraya tırnak içine yapıştır.
+  verification: {
+    google: "BURAYA_GOOGLE_KODUNU_YAPISTIR",
+  },
+
+  // 3. Favicon Ayarları
   icons: {
     icon: [
       { url: "/icon.png", width: 32, height: 32 },
@@ -18,7 +30,7 @@ export const metadata: Metadata = {
     apple: "/icon.png",
   },
 
-  // 2. WhatsApp Görseli İçin OpenGraph Ayarı
+  // 4. Sosyal Medya (WhatsApp/Google) Görünümü
   openGraph: {
     title: "Peta Yapı | Geleceği İnşa Ediyoruz",
     description: "İstanbul'un kalbinde modern ve güvenli projeler.",
@@ -28,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg", // metadataBase sayesinde otomatik tam yol olur
+        url: "/og-image.jpg", 
         width: 1200,
         height: 630,
         alt: "Peta Yapı Projeleri",
