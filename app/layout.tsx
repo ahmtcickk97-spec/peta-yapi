@@ -5,17 +5,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.petayapi.com"),
   title: "Peta Yapı | İstanbul Zeytinburnu & Kağıthane Konut Projeleri",
   description: "Peta Yapı; İstanbul genelinde modern konut projeleri ve kentsel dönüşüm çözümleri sunar.",
-  
   alternates: {
     canonical: "https://www.petayapi.com",
   },
-
-  // İkonları en sade hale getirdik, TypeScript buna asla hata veremez
+  // İkonları en güvenli yolla tanımladık
   icons: {
     icon: "/icon.png",
     apple: "/icon.png",
   },
-
   openGraph: {
     title: "Peta Yapı | İstanbul'un Güvenli İnşaat Markası",
     description: "Zeytinburnu ve Kağıthane'de modern konut projeleri.",
