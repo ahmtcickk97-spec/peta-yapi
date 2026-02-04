@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "https://www.petayapi.com",
   },
 
-  // İkonlar (Hatanın düzeldiği kısım burası)
+  // İkonlar (Hatanın düzeldiği kısım tam burası)
   icons: {
     icon: [
       { url: "/icon.png", sizes: "32x32", type: "image/png" },
