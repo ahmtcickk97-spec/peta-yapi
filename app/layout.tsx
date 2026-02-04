@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   // Sitenin ana adresi (Tüm görsel yollarını tam adrese çevirir)
-  metadataBase: new URL("https://peta-yapi.vercel.app"),
+  metadataBase: new URL("https://www.petayapi.com"),
 
   title: "Peta Yapı | İstanbul Zeytinburnu & Kağıthane Konut Projeleri",
   description: "Peta Yapı; İstanbul genelinde modern konut projeleri ve kentsel dönüşüm çözümleri sunar.",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Peta Yapı | Geleceği İnşa Ediyoruz",
     description: "İstanbul'un kalbinde modern ve güvenli projeler.",
-    url: "https://peta-yapi.vercel.app", 
+    url: "https://www.petayapi.com", 
     siteName: "Peta Yapı",
     locale: "tr_TR",
     type: "website",
