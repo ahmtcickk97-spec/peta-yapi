@@ -39,7 +39,7 @@ const ContactForm = () => {
                   <span className="bg-[#38BDF8]/20 p-2 rounded-lg text-[#38BDF8]">✉️</span>
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-[#38BDF8] font-bold">E-Posta</p>
-                    <p className="text-sm font-medium">info@petayapi.com</p>
+                    <p className="text-sm font-medium">petayapi@gmail.com</p>
                   </div>
                 </div>
               </div>
