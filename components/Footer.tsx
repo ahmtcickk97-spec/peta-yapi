@@ -52,7 +52,7 @@ const Footer = () => {
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed">
-              İstanbul genelinde, özellikle <strong>Zeytinburnu</strong> ve <strong>Kağıthane</strong> bölgelerinde kentsel dönüşüm ve modern mimari disipliniyle sağlam yarınlar inşa ediyoruz.
+              İstanbul genelinde,kentsel dönüşüm ve modern mimari disipliniyle sağlam yarınlar inşa ediyoruz.
             </p>
           </div>
 

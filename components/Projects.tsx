@@ -22,7 +22,7 @@ const projects: ProjectType[] = [
   {
     id: "kagithane-projesi",
     title: "Kağıthane Prestij Kule",
-    location: "İstanbul / Kağıthane (Ana Cadde)",
+    location: "İstanbul / Kağıthane (Talatpaşa Caddesi)",
     description: "İstanbul'un kalbinde, Levent iş merkezlerine komşu lokasyonda yükselen yeni projemiz. Şehrin dinamizmini modern mimari ve yüksek yatırım değeriyle buluşturuyoruz.",
     category: "Karma Proje (Konut + Ticari)",
     details: ["Temel Aşamasında", "Levent'e 5 Dk", "Yüksek Kira Getirisi", "Metroya Yakın"],
