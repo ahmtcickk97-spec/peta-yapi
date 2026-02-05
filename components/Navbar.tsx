@@ -25,21 +25,24 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed w-full z-[100] transition-all duration-500 ${
-      isScrolled ? 'bg-white shadow-xl py-2' : 'bg-transparent py-4'
+      // Üst boşluğu (pt) azaltarak logoyu yukarı çektik
+      isScrolled ? 'bg-white shadow-xl pt-1 pb-2' : 'bg-transparent pt-2 pb-4'
     }`}>
-      <div className="container mx-auto px-4 md:px-8">
+      {/* px-2 md:px-4 yaparak logoyu sola daha fazla yanaştırdık */}
+      <div className="container mx-auto px-2 md:px-4 lg:max-w-[95%]">
         <div className="flex justify-between items-center">
           
-          {/* --- LOGO: Sadece Image kalsın, içindeki tüm yazıları sil --- */}
-          <Link href="#anasayfa" className="relative group block">
+          {/* --- LOGO: SOL ÜSTE YANAŞTIRILDI --- */}
+          <Link href="#anasayfa" className="relative group transition-transform hover:scale-105 active:scale-95">
             <Image 
               src="/logo.png" 
               alt="Peta Yapı" 
-              width={250} 
-              height={100} 
-              // mix-blend-multiply: Beyaz arka planı yok eder (sadece beyaz zeminde çalışır)
-              // Şimdilik filtreleri kaldırdım ki logo olduğu gibi görünsün
-              className="object-contain w-auto h-[60px] md:h-[80px]" 
+              width={220} 
+              height={70} 
+              // h-[55px] md:h-[75px] ile boyutu koruduk ama konumu yukarı çektik
+              className={`object-contain w-auto h-[55px] md:h-[75px] transition-all duration-500 ${
+                isScrolled ? 'brightness-100' : 'brightness-0 invert'
+              }`} 
               priority 
             />
           </Link>
@@ -73,6 +76,13 @@ const Navbar = () => {
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
               </svg>
             </a>
+
+            {/* Mobil Menü Butonu */}
+            <button onClick={() => setIsOpen(!isOpen)} className={`md:hidden p-1 z-[120] relative ${isOpen ? 'text-white' : (isScrolled ? 'text-[#001F3F]' : 'text-white')}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                {isOpen ? <path d="M18 6 6 18M6 6l12 12"/> : <Fragment><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></Fragment>}
+              </svg>
+            </button>
           </div>
         </div>
       </div>
