@@ -30,16 +30,16 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           
-          {/* --- LOGO: Akıllı Kontrast Ayarlı --- */}
+          {/* --- LOGO ALANI: ESKİ KODLAR SİLİNDİ, logo.png EKLENDİ --- */}
           <Link href="#anasayfa" className="relative group transition-transform hover:scale-105 active:scale-95">
             <Image 
               src="/logo.png" 
               alt="Peta Yapı" 
-              width={220} 
-              height={70} 
-              // isScrolled durumuna göre logoyu beyazdan siyaha (veya tam tersi) çevirir
-              className={`object-contain w-auto h-[50px] md:h-[65px] transition-all duration-500 ${
-                isScrolled ? 'brightness-0' : 'brightness-0 invert'
+              width={250}   // Genişlik ayarı
+              height={80}    // Yükseklik ayarı
+              // Bu sınıf logonun her zeminde (koyu/açık) net görünmesini sağlar:
+              className={`object-contain w-auto h-[55px] md:h-[75px] transition-all duration-500 ${
+                isScrolled ? 'brightness-100' : 'brightness-0 invert'
               }`} 
               priority 
             />
