@@ -1,19 +1,16 @@
-export default function Logo({ isScrolled = false, isFooter = false }) {
-  const textColor = isFooter ? 'text-white' : (isScrolled ? 'text-black' : 'text-white');
-  const sloganColor = isFooter ? 'text-white/80' : (isScrolled ? 'text-black' : 'text-white/90');
-
+export default function Logo() {
   return (
     <div className="flex flex-col items-start font-sans select-none leading-none">
-      {/* Üst Kısım: Her şey dip dibe */}
+      {/* Üst Kısım: P Sembolü + PETA + YAPI (Bitişik Düzen) */}
       <div className="flex items-center">
-        {/* Lacivert Kutu: İkon ve PETA (Aradaki boşluk kapatıldı) */}
-        <div className="bg-[#001F3F] flex items-center px-2 md:px-3 py-1.5 md:py-2 rounded-[4px] h-[42px] md:h-[52px]">
-          {/* P Sembolü (Görsele göre kalınlaştırıldı) */}
+        {/* Lacivert Kutu: İkon ve PETA */}
+        <div className="bg-[#001F3F] flex items-center px-2 md:px-3 py-1.5 md:py-2 rounded-[4px] h-[38px] md:h-[48px] border border-white/10">
+          {/* P Sembolü - Kalın ve Bitişik */}
           <svg
-            width="32"
-            height="32"
+            width="28"
+            height="28"
             viewBox="0 0 100 120"
-            className="mr-1 md:mr-1.5" /* İkon ile PETA arası çok dar */
+            className="mr-1 md:mr-1.5"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path 
@@ -24,23 +21,23 @@ export default function Logo({ isScrolled = false, isFooter = false }) {
             <rect x="50" y="70" width="4" height="15" fill="white" />
           </svg>
 
-          {/* PETA Yazısı - Çok Dar ve Uzun */}
+          {/* PETA Yazısı - Zarif, İnce ve Kutu İçine Sıkışık */}
           <span 
-            className="text-2xl md:text-4xl font-black tracking-[-0.08em] text-white uppercase"
+            className="text-2xl md:text-3xl font-bold tracking-[-0.05em] text-white uppercase"
             style={{ 
               transform: 'scaleX(0.75) scaleY(1.3)', 
               transformOrigin: 'left center',
               display: 'inline-block',
-              marginRight: '-8px' /* Sağdaki boşluğu yok etmek için */
+              marginRight: '-10px' 
             }}
           >
             PETA
           </span>
         </div>
 
-        {/* YAPI Yazısı - Kutuya neredeyse yapışık */}
+        {/* YAPI Yazısı - Kutuya bitişik ve HER ZAMAN BEYAZ */}
         <span 
-          className={`ml-1 text-2xl md:text-4xl font-black tracking-[-0.08em] uppercase transition-colors duration-300 ${textColor}`}
+          className="ml-1 text-2xl md:text-3xl font-bold tracking-[-0.05em] uppercase text-white"
           style={{ 
             transform: 'scaleX(0.75) scaleY(1.3)', 
             transformOrigin: 'left center',
@@ -51,8 +48,8 @@ export default function Logo({ isScrolled = false, isFooter = false }) {
         </span>
       </div>
 
-      {/* Slogan - Kutunun hemen altında, bitişik */}
-      <span className={`mt-2 text-[8px] md:text-[11px] font-bold tracking-tighter ${sloganColor}`}>
+      {/* SLOGAN: Marka değerini artıran Gök Mavisi (#38BDF8) */}
+      <span className="mt-2 text-[8px] md:text-[10px] font-bold tracking-tight text-[#38BDF8]">
         Güvenle Dönüşüm, Sağlam Yarınlar
       </span>
     </div>

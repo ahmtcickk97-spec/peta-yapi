@@ -7,10 +7,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           
           <div className="space-y-8">
-            {/* --- FOTOĞRAFA SADIK: BİTİŞİK VE İNCE LOGO (Footer Versiyonu) --- */}
+            {/* --- MARKA DEĞERİNİ ÖN PLANA ÇIKARAN LOGO (Footer) --- */}
             <div className="flex flex-col items-start font-sans leading-none">
                 <div className="flex items-center">
-                    {/* Lacivert Kutu: İkon ve PETA (Arka planla karışmaması için ince beyaz sınır) */}
+                    {/* Lacivert Kutu: İkon ve PETA */}
                     <div className="bg-[#001F3F] flex items-center px-2 py-1.5 md:px-3 md:py-2 rounded-[4px] h-[45px] border border-white/20 shadow-sm">
                         {/* P Sembolü - Bitişik */}
                         <svg width="28" height="28" viewBox="0 0 100 120" className="mr-1 md:mr-1.5" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ const Footer = () => {
                             <rect x="50" y="70" width="4" height="15" fill="white" />
                         </svg>
 
-                        {/* PETA Yazısı - Zarif, İnce ve Sıkışık */}
+                        {/* PETA Yazısı - Beyaz ve İnce/Uzun Stil */}
                         <span 
                             className="text-2xl md:text-3xl font-bold tracking-[-0.05em] text-white uppercase"
                             style={{ 
@@ -33,7 +33,7 @@ const Footer = () => {
                         </span>
                     </div>
 
-                    {/* YAPI Yazısı - Kutuya Bitişik */}
+                    {/* YAPI Yazısı - Beyaz ve Bitişik */}
                     <span 
                         className="ml-1 text-2xl md:text-3xl font-bold tracking-[-0.05em] text-white uppercase"
                         style={{ 
@@ -45,14 +45,15 @@ const Footer = () => {
                         YAPI
                     </span>
                 </div>
-                {/* Slogan */}
-                <span className="mt-3 text-[12px] font-medium tracking-tight text-white/80">
+
+                {/* SLOGAN: Markayı ön plana çıkaran Gök Mavisi (#38BDF8) */}
+                <span className="mt-3 text-[12px] font-bold tracking-tight text-[#38BDF8]">
                     Güvenle Dönüşüm, Sağlam Yarınlar
                 </span>
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed">
-              İstanbul genelinde,kentsel dönüşüm ve modern mimari disipliniyle sağlam yarınlar inşa ediyoruz.
+              İstanbul genelinde, kentsel dönüşüm ve modern mimari disipliniyle sağlam yarınlar inşa ediyoruz.
             </p>
           </div>
 
