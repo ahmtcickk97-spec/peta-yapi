@@ -4,29 +4,31 @@ import React from 'react';
 const Hero = () => {
   return (
     <section id="anasayfa" className="relative h-[85vh] flex items-center justify-center overflow-hidden">
-      {/* İNŞAAT FOTOĞRAFI: En garantili yöntemle arka plana sabitlendi */}
+      {/* İNŞAAT FOTOĞRAFI */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070" 
           alt="Peta Yapı İnşaat" 
           className="w-full h-full object-cover transition-transform duration-[2000ms] scale-105"
         />
-        {/* Koyu Overlay (Slogan net görünsün diye) */}
+        {/* Koyu Overlay */}
         <div className="absolute inset-0 bg-[#001F3F]/60 backdrop-blur-[1px] z-10"></div>
       </div>
 
-      {/* İÇERİK: Senin istediğin o güçlü slogan */}
+      {/* İÇERİK: Melis Hanım'ın istediği renk vurgusu ile */}
       <div className="relative z-20 text-center px-4 max-w-5xl">
-        <h1 className="text-4xl md:text-7xl font-black text-white mb-6 leading-[1.1] tracking-tighter uppercase">
-          GÜVENLE DÖNÜŞÜM <br />
-          <span className="text-white bg-[#001F3F] px-4 py-1">SAĞLAM YARINLAR</span>
+        <h1 className="text-4xl md:text-7xl font-black mb-6 leading-[1.1] tracking-tighter uppercase">
+          {/* "GÜVENLE DÖNÜŞÜM" artık gök mavisi vurgulu */}
+          <span className="text-[#38BDF8]">GÜVENLE DÖNÜŞÜM</span> <br />
+          {/* "SAĞLAM YARINLAR" kutu içinde beyaz kalarak dengeyi sağlıyor */}
+          <span className="text-white bg-[#001F3F] px-4 py-1 inline-block mt-2">SAĞLAM YARINLAR</span>
         </h1>
         
         <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-medium leading-relaxed">
           Peta Yapı ile modern mimari ve mühendislik disiplinini buluşturuyoruz. Geleceğin yapılarını bugünden güvenle inşa ediyoruz.
         </p>
 
-        {/* BUTONLAR: Linkleri güncel kalacak şekilde ayarlandı */}
+        {/* BUTONLAR */}
         <div className="flex flex-col sm:flex-row gap-5 justify-center">
           <a 
             href="#projelerimiz" 
