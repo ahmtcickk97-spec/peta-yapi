@@ -7,23 +7,23 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           
           <div className="space-y-8">
-            {/* --- ZARİF/İNCE LOGO TASARIMI (Navbar ile Birebir) --- */}
-            <div className="flex flex-col items-start font-sans">
+            {/* --- FOTOĞRAFA SADIK: BİTİŞİK VE İNCE LOGO (Footer Versiyonu) --- */}
+            <div className="flex flex-col items-start font-sans leading-none">
                 <div className="flex items-center">
-                    {/* Lacivert Kutu (İçinde PETA) */}
-                    <div className="bg-[#001F3F] flex items-center px-3 py-2 rounded-[6px] h-[55px] border border-white/10">
-                        {/* "P" Harfli Ev İkonu */}
-                        <svg width="32" height="32" viewBox="0 0 100 125" className="mr-3" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15 10 H 60 C 85 10, 85 55, 60 55 H 35 V 110 H 15 V 10 Z" fill="white" />
-                            <path d="M35 55 L 50 40 L 65 55 V 85 H 35 V 55 Z" fill="#001F3F" />
-                            <rect x="47" y="65" width="6" height="20" fill="white" />
+                    {/* Lacivert Kutu: İkon ve PETA (Arka planla karışmaması için ince beyaz sınır) */}
+                    <div className="bg-[#001F3F] flex items-center px-2 py-1.5 md:px-3 md:py-2 rounded-[4px] h-[45px] border border-white/20 shadow-sm">
+                        {/* P Sembolü - Bitişik */}
+                        <svg width="28" height="28" viewBox="0 0 100 120" className="mr-1 md:mr-1.5" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 10 H 65 C 95 10, 95 60, 65 60 H 40 V 110 H 15 V 10 Z" fill="white" />
+                            <path d="M40 60 L 52 48 L 64 60 V 85 H 40 V 60 Z" fill="#001F3F" />
+                            <rect x="50" y="70" width="4" height="15" fill="white" />
                         </svg>
 
-                        {/* PETA Yazısı - Zarif ve İnce Stil */}
+                        {/* PETA Yazısı - Zarif, İnce ve Sıkışık */}
                         <span 
-                            className="text-3xl font-medium tracking-tighter text-white leading-none uppercase"
+                            className="text-2xl md:text-3xl font-bold tracking-[-0.05em] text-white uppercase"
                             style={{ 
-                                transform: 'scaleX(0.7) scaleY(1.3)', 
+                                transform: 'scaleX(0.75) scaleY(1.3)', 
                                 transformOrigin: 'left center',
                                 display: 'inline-block',
                                 marginRight: '-10px' 
@@ -33,11 +33,11 @@ const Footer = () => {
                         </span>
                     </div>
 
-                    {/* YAPI Yazısı - Zarif ve İnce Stil */}
+                    {/* YAPI Yazısı - Kutuya Bitişik */}
                     <span 
-                        className="ml-4 text-3xl font-medium tracking-tighter text-white leading-none uppercase"
+                        className="ml-1 text-2xl md:text-3xl font-bold tracking-[-0.05em] text-white uppercase"
                         style={{ 
-                            transform: 'scaleX(0.7) scaleY(1.3)', 
+                            transform: 'scaleX(0.75) scaleY(1.3)', 
                             transformOrigin: 'left center',
                             display: 'inline-block'
                         }}
@@ -46,7 +46,7 @@ const Footer = () => {
                     </span>
                 </div>
                 {/* Slogan */}
-                <span className="mt-3 text-[14px] font-medium tracking-wide text-white/80">
+                <span className="mt-3 text-[12px] font-medium tracking-tight text-white/80">
                     Güvenle Dönüşüm, Sağlam Yarınlar
                 </span>
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
             <ul className="space-y-4 text-gray-400 text-sm">
               <li className="flex items-start">
                 <span className="mr-3 mt-1">📍</span>
-                <span>BAHÇEŞEHİR 2. KISIM MAH. POSTA CAD. <br /> LOCA NO: 6 İÇ KAPI NO: 30 <br /> BAŞAKŞEHİR / İSTANBUL</span>
+                <span>BAHÇEŞEHİR 2. KISIM MAH. POSTA CAD. <br /> BAHÇEŞEHİR LOCA NO: 6 İÇ KAPI NO: 30 <br /> BAŞAKŞEHİR / İSTANBUL</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-3">📞</span>
