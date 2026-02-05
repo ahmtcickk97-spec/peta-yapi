@@ -29,25 +29,34 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           
-          {/* --- LOGO: BOYUTLAR EŞİTLENDİ --- */}
-          <Link href="#anasayfa" className="flex flex-col items-center group">
-            <div className="flex items-center leading-none">
-              {/* PETA Kutusu */}
-              <span className="bg-[#001F3F] text-white px-2 py-1 text-xl md:text-2xl font-black tracking-tighter rounded-sm shadow-sm">
-                PETA
-              </span>
-              {/* YAPI Yazısı (Boyut PETA ile aynı) */}
-              <span className={`ml-1 text-xl md:text-2xl font-black tracking-tighter transition-colors duration-300 ${
-                isScrolled ? 'text-[#001F3F]' : 'text-white'
+          {/* --- LOGO: YENİ İKON VE METİN --- */}
+          <Link href="#anasayfa" className="flex items-center gap-2 group">
+            {/* Mimari Şekil / İkon */}
+            <div className={`transition-colors duration-300 ${isScrolled ? 'text-[#001F3F]' : 'text-white'}`}>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 21h18" />
+                <path d="M5 21V7l7-4 7 4v14" />
+                <path d="M9 21v-6a3 3 0 0 1 6 0v6" />
+              </svg>
+            </div>
+
+            <div className="flex flex-col items-start">
+              <div className="flex items-center leading-none">
+                <span className="bg-[#001F3F] text-white px-2 py-1 text-xl md:text-2xl font-black tracking-tighter rounded-sm shadow-sm">
+                  PETA
+                </span>
+                <span className={`ml-1 text-xl md:text-2xl font-black tracking-tighter transition-colors duration-300 ${
+                  isScrolled ? 'text-[#001F3F]' : 'text-white'
+                }`}>
+                  YAPI
+                </span>
+              </div>
+              <span className={`mt-1 text-[7px] md:text-[8px] font-bold tracking-[0.3em] uppercase transition-colors ${
+                isScrolled ? 'text-[#001F3F]' : 'text-white/90'
               }`}>
-                YAPI
+                Güvenle Dönüşüm Sağlam Yarınlar
               </span>
             </div>
-            <span className={`mt-1 text-[8px] md:text-[9px] font-bold tracking-[0.4em] uppercase transition-colors ${
-              isScrolled ? 'text-[#001F3F]' : 'text-white/90'
-            }`}>
-              İnşaat & Mimarlık
-            </span>
           </Link>
 
           {/* SAĞ TARAF */}

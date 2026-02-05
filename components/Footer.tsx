@@ -7,40 +7,63 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           
           <div className="space-y-6">
-            <div className="flex flex-col items-start leading-none">
-              <div className="flex items-center">
-                {/* PETA Kutusu */}
-                <span className="bg-[#001F3F] text-white px-2 py-1 text-2xl font-black tracking-tighter rounded-sm border border-white/10 shadow-sm">
-                    PETA
-                </span>
-                {/* YAPI Yazısı (Aynı Boyut) */}
-                <span className="ml-1 text-white text-2xl font-black tracking-tighter">
-                    YAPI
-                </span>
+            {/* --- LOGO: YENİ İKONLU VERSİYON --- */}
+            <div className="flex items-center gap-2 group">
+              <div className="text-white">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 21h18" />
+                  <path d="M5 21V7l7-4 7 4v14" />
+                  <path d="M9 21v-6a3 3 0 0 1 6 0v6" />
+                </svg>
+              </div>
+              <div className="flex flex-col items-start leading-none">
+                <div className="flex items-center">
+                  <span className="bg-white text-[#001F3F] px-2 py-1 text-xl font-black tracking-tighter rounded-sm shadow-sm">
+                      PETA
+                  </span>
+                  <span className="ml-1 text-white text-xl font-black tracking-tighter">
+                      YAPI
+                  </span>
+                </div>
               </div>
             </div>
+            {/* --- SEO UYUMLU AÇIKLAMA --- */}
             <p className="text-gray-400 text-sm leading-relaxed">
-              İstanbul ve Mardin'un dokusuna uygun, modern mimari ve mühendislik disipliniyle sağlam yarınlar inşa ediyoruz.
+              İstanbul genelinde, özellikle <strong>Zeytinburnu</strong> ve <strong>Kağıthane</strong> bölgelerinde kentsel dönüşüm ve modern mimari disipliniyle sağlam yarınlar inşa ediyoruz.
             </p>
           </div>
 
           <div>
             <h4 className="text-lg font-bold mb-6 text-[#38BDF8]">Hızlı Bağlantılar</h4>
             <ul className="space-y-4 text-gray-400 text-sm font-medium">
-              <li><a href="#anasayfa" className="hover:text-[#38BDF8]">Anasayfa</a></li>
-              <li><a href="#hakkimizda" className="hover:text-[#38BDF8]">Hakkımızda</a></li>
-              <li><a href="#hizmetlerimiz" className="hover:text-[#38BDF8]">Hizmetlerimiz</a></li>
-              <li><a href="#projelerimiz" className="hover:text-[#38BDF8]">Projelerimiz</a></li>
-              <li><a href="#iletisim" className="hover:text-[#38BDF8]">İletişim</a></li>
+              <li><a href="#anasayfa" className="hover:text-[#38BDF8] transition-colors">Anasayfa</a></li>
+              <li><a href="#hakkimizda" className="hover:text-[#38BDF8] transition-colors">Hakkımızda</a></li>
+              <li><a href="#hizmetlerimiz" className="hover:text-[#38BDF8] transition-colors">Hizmetlerimiz</a></li>
+              <li><a href="#projelerimiz" className="hover:text-[#38BDF8] transition-colors">Projelerimiz</a></li>
+              <li><a href="#iletisim" className="hover:text-[#38BDF8] transition-colors">İletişim</a></li>
             </ul>
           </div>
 
+          {/* --- GÜNCEL İLETİŞİM BİLGİLERİ --- */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-[#38BDF8]">İletişim</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li className="flex items-start"><span className="mr-3">📍</span><span>Zeytinburnu, İstanbul</span></li>
-              <li className="flex items-center"><span className="mr-3">📞</span><span>0532 557 85 70</span></li>
-              <li className="flex items-center"><span className="mr-3">✉️</span><span>info@petayapi.com</span></li>
+              <li className="flex items-start">
+                <span className="mr-3 mt-1">📍</span>
+                <span>
+                  BAHÇEŞEHİR 2. KISIM MAH. POSTA CAD. <br />
+                  LOCA NO: 6 İÇ KAPI NO: 30 <br />
+                  BAŞAKŞEHİR / İSTANBUL
+                </span>
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3">📞</span>
+                <a href="tel:+905325578570" className="hover:text-[#38BDF8] transition-colors">0532 557 85 70</a>
+              </li>
+              <li className="flex items-center">
+                <span className="mr-3">✉️</span>
+                <a href="mailto:petayapi@gmail.com" className="hover:text-[#38BDF8] transition-colors">petayapi@gmail.com</a>
+              </li>
             </ul>
           </div>
 

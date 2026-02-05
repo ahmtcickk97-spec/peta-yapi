@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.petayapi.com"),
-  title: "Peta Yapı | İstanbul Zeytinburnu & Kağıthane Konut Projeleri",
+  title: "Peta Yapı | Güvenle Dönüşüm Sağlam Yarınlar",
   description: "Peta Yapı; İstanbul genelinde modern konut projeleri, kentsel dönüşüm ve güvenli inşaat çözümleri sunar.",
   
   alternates: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title: "Peta Yapı | İstanbul'un Güvenli İnşaat Markası",
-    description: "Zeytinburnu ve Kağıthane'de modern konut projeleri.",
+    description: "Güvenle Dönüşüm Sağlam Yarınlar",
     url: "https://www.petayapi.com",
     siteName: "Peta Yapı",
     locale: "tr_TR",

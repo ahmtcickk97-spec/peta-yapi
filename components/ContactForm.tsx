@@ -64,7 +64,7 @@ const ContactForm = () => {
                   name="fullname" 
                   required 
                   className="w-full border-b-2 border-slate-100 bg-slate-50/50 px-4 py-4 focus:border-[#38BDF8] outline-none transition-all rounded-xl text-sm" 
-                  placeholder="Ahmet Yılmaz" 
+                  placeholder="Ahmet Cicek" 
                 />
               </div>
               <div className="space-y-2">
@@ -74,7 +74,7 @@ const ContactForm = () => {
                   name="email" 
                   required 
                   className="w-full border-b-2 border-slate-100 bg-slate-50/50 px-4 py-4 focus:border-[#38BDF8] outline-none transition-all rounded-xl text-sm" 
-                  placeholder="ahmet@email.com" 
+                  placeholder="ahmet@gmail.com" 
                 />
               </div>
             </div>
