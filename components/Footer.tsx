@@ -7,23 +7,48 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           
           <div className="space-y-8">
-            {/* --- NAVBAR'DAKİ AYNI LOGO KODU (Footer için uyarlanmış) --- */}
+            {/* --- ZARİF/İNCE LOGO TASARIMI (Navbar ile Birebir) --- */}
             <div className="flex flex-col items-start font-sans">
                 <div className="flex items-center">
-                {/* Lacivert Kutu (Footer'da arka planla karışmaması için beyaz kenarlık ekledik) */}
-                <div className="bg-[#001F3F] flex items-center px-3 py-2 rounded-md h-[55px] border-2 border-white/20">
-                    <svg width="32" height="32" viewBox="0 0 100 125" className="mr-3" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M15 10 H 60 C 85 10, 85 55, 60 55 H 35 V 110 H 15 V 10 Z" fill="white" />
-                        <path d="M35 55 L 50 40 L 65 55 V 85 H 35 V 55 Z" fill="#001F3F" />
-                        <rect x="47" y="65" width="6" height="20" fill="white" />
-                    </svg>
-                    <span className="text-3xl font-[900] tracking-tighter text-white leading-none">PETA</span>
+                    {/* Lacivert Kutu (İçinde PETA) */}
+                    <div className="bg-[#001F3F] flex items-center px-3 py-2 rounded-[6px] h-[55px] border border-white/10">
+                        {/* "P" Harfli Ev İkonu */}
+                        <svg width="32" height="32" viewBox="0 0 100 125" className="mr-3" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 10 H 60 C 85 10, 85 55, 60 55 H 35 V 110 H 15 V 10 Z" fill="white" />
+                            <path d="M35 55 L 50 40 L 65 55 V 85 H 35 V 55 Z" fill="#001F3F" />
+                            <rect x="47" y="65" width="6" height="20" fill="white" />
+                        </svg>
+
+                        {/* PETA Yazısı - Zarif ve İnce Stil */}
+                        <span 
+                            className="text-3xl font-medium tracking-tighter text-white leading-none uppercase"
+                            style={{ 
+                                transform: 'scaleX(0.7) scaleY(1.3)', 
+                                transformOrigin: 'left center',
+                                display: 'inline-block',
+                                marginRight: '-10px' 
+                            }}
+                        >
+                            PETA
+                        </span>
+                    </div>
+
+                    {/* YAPI Yazısı - Zarif ve İnce Stil */}
+                    <span 
+                        className="ml-4 text-3xl font-medium tracking-tighter text-white leading-none uppercase"
+                        style={{ 
+                            transform: 'scaleX(0.7) scaleY(1.3)', 
+                            transformOrigin: 'left center',
+                            display: 'inline-block'
+                        }}
+                    >
+                        YAPI
+                    </span>
                 </div>
-                {/* YAPI Yazısı (Footer koyu olduğu için BEYAZ yaptık) */}
-                <span className="ml-3 text-3xl font-[900] tracking-tighter text-white leading-none">YAPI</span>
-                </div>
-                {/* Slogan (Beyaz) */}
-                <span className="mt-2 text-[14px] font-bold tracking-tight text-white/90">Güvenle Dönüşüm, Sağlam Yarınlar</span>
+                {/* Slogan */}
+                <span className="mt-3 text-[14px] font-medium tracking-wide text-white/80">
+                    Güvenle Dönüşüm, Sağlam Yarınlar
+                </span>
             </div>
 
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -31,7 +56,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* ... (Diğer Footer kısımları - Linkler, İletişim, Sosyal Medya - AYNI KALACAK) ... */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-[#38BDF8]">Hızlı Bağlantılar</h4>
             <ul className="space-y-4 text-gray-400 text-sm font-medium">
@@ -71,7 +95,10 @@ const Footer = () => {
           </div>
 
         </div>
-        {/* ... (Footer Alt Kısım) ... */}
+
+        <div className="border-t border-white/10 pt-10 text-center text-gray-500 text-[10px] uppercase tracking-widest font-bold">
+          <p>© {new Date().getFullYear()} Peta Yapı. Tüm Hakları Saklıdır.</p>
+        </div>
       </div>
     </footer>
   );
