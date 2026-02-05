@@ -15,7 +15,7 @@ const ContactForm = () => {
             <div className="relative z-10">
               <h3 className="text-3xl font-black mb-6 uppercase tracking-tighter">Bize Ulaşın</h3>
               <p className="text-slate-300 mb-10 text-sm leading-relaxed font-medium">
-                Zeytinburnu merkezli ofisimizde sizi ağırlamaktan mutluluk duyarız. Projeniz için ücretsiz keşif ve teklif almak için formu doldurmanız yeterlidir.
+                Bahçeşehir merkezli ofisimizde sizi ağırlamaktan mutluluk duyarız. Projeniz için ücretsiz keşif ve teklif almak için formu doldurmanız yeterlidir.
               </p>
 
               <div className="space-y-6">
@@ -23,7 +23,7 @@ const ContactForm = () => {
                   <span className="bg-[#38BDF8]/20 p-2 rounded-lg text-[#38BDF8]">📍</span>
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-[#38BDF8] font-bold">Merkez Ofis</p>
-                    <p className="text-sm font-medium">Zeytinburnu, İstanbul</p>
+                    <p className="text-sm font-medium">Bahçeşehir, İstanbul</p>
                   </div>
                 </div>
                 
