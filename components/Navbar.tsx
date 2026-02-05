@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect, Fragment } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,57 +30,19 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex justify-between items-center">
           
-          {/* --- LOGO: BİTİŞİK, İNCE VE MARKA ODAKLI --- */}
-          <Link href="#anasayfa" className="flex flex-col items-start group no-underline font-sans leading-none">
-            <div className="flex items-center">
-              {/* Lacivert Kutu: İkon ve PETA */}
-              <div className="bg-[#001F3F] flex items-center px-2 py-1.5 md:px-3 md:py-2 rounded-[4px] h-[38px] md:h-[48px] shadow-sm">
-                {/* P Sembolü - Kalın ve Bitişik */}
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 100 120"
-                  className="mr-1 md:mr-1.5" 
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M15 10 H 65 C 95 10, 95 60, 65 60 H 40 V 110 H 15 V 10 Z" fill="white" />
-                  <path d="M40 60 L 52 48 L 64 60 V 85 H 40 V 60 Z" fill="#001F3F" />
-                  <rect x="50" y="70" width="4" height="15" fill="white" />
-                </svg>
-
-                {/* PETA Yazısı - Zarif, İnce ve Kutu İçine Sıkışık */}
-                <span 
-                  className="text-2xl md:text-3xl font-bold tracking-[-0.05em] text-white uppercase"
-                  style={{ 
-                    transform: 'scaleX(0.75) scaleY(1.3)', 
-                    transformOrigin: 'left center',
-                    display: 'inline-block',
-                    marginRight: '-10px' 
-                  }}
-                >
-                  PETA
-                </span>
-              </div>
-
-              {/* YAPI Yazısı - Kutuya bitişik (Scroll'a göre renk değiştirir) */}
-              <span 
-                className={`ml-1 text-2xl md:text-3xl font-bold tracking-[-0.05em] uppercase transition-colors duration-300 ${
-                  isScrolled ? 'text-black' : 'text-white'
-                }`}
-                style={{ 
-                  transform: 'scaleX(0.75) scaleY(1.3)', 
-                  transformOrigin: 'left center',
-                  display: 'inline-block'
-                }}
-              >
-                YAPI
-              </span>
-            </div>
-
-            {/* SLOGAN: Markayı parlatmak için Gök Mavisi (#38BDF8) */}
-            <span className="mt-2 text-[8px] md:text-[10px] font-bold tracking-tight text-[#38BDF8]">
-              Güvenle Dönüşüm, Sağlam Yarınlar
-            </span>
+          {/* --- LOGO: Akıllı Kontrast Ayarlı --- */}
+          <Link href="#anasayfa" className="relative group transition-transform hover:scale-105 active:scale-95">
+            <Image 
+              src="/logo.png" 
+              alt="Peta Yapı" 
+              width={220} 
+              height={70} 
+              // isScrolled durumuna göre logoyu beyazdan siyaha (veya tam tersi) çevirir
+              className={`object-contain w-auto h-[50px] md:h-[65px] transition-all duration-500 ${
+                isScrolled ? 'brightness-0' : 'brightness-0 invert'
+              }`} 
+              priority 
+            />
           </Link>
 
           {/* SAĞ TARAF (Menü Linkleri) */}
