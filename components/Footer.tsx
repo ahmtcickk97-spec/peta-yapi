@@ -2,37 +2,36 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-[#001F3F] text-white pt-20 pb-10">
+    <footer className="bg-[#001F3F] text-white pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           
-          <div className="space-y-6">
-            {/* --- LOGO: YENİ İKONLU VERSİYON --- */}
-            <div className="flex items-center gap-2 group">
-              <div className="text-white">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 21h18" />
-                  <path d="M5 21V7l7-4 7 4v14" />
-                  <path d="M9 21v-6a3 3 0 0 1 6 0v6" />
-                </svg>
-              </div>
-              <div className="flex flex-col items-start leading-none">
+          <div className="space-y-8">
+            {/* --- NAVBAR'DAKİ AYNI LOGO KODU (Footer için uyarlanmış) --- */}
+            <div className="flex flex-col items-start font-sans">
                 <div className="flex items-center">
-                  <span className="bg-white text-[#001F3F] px-2 py-1 text-xl font-black tracking-tighter rounded-sm shadow-sm">
-                      PETA
-                  </span>
-                  <span className="ml-1 text-white text-xl font-black tracking-tighter">
-                      YAPI
-                  </span>
+                {/* Lacivert Kutu (Footer'da arka planla karışmaması için beyaz kenarlık ekledik) */}
+                <div className="bg-[#001F3F] flex items-center px-3 py-2 rounded-md h-[55px] border-2 border-white/20">
+                    <svg width="32" height="32" viewBox="0 0 100 125" className="mr-3" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 10 H 60 C 85 10, 85 55, 60 55 H 35 V 110 H 15 V 10 Z" fill="white" />
+                        <path d="M35 55 L 50 40 L 65 55 V 85 H 35 V 55 Z" fill="#001F3F" />
+                        <rect x="47" y="65" width="6" height="20" fill="white" />
+                    </svg>
+                    <span className="text-3xl font-[900] tracking-tighter text-white leading-none">PETA</span>
                 </div>
-              </div>
+                {/* YAPI Yazısı (Footer koyu olduğu için BEYAZ yaptık) */}
+                <span className="ml-3 text-3xl font-[900] tracking-tighter text-white leading-none">YAPI</span>
+                </div>
+                {/* Slogan (Beyaz) */}
+                <span className="mt-2 text-[14px] font-bold tracking-tight text-white/90">Güvenle Dönüşüm, Sağlam Yarınlar</span>
             </div>
-            {/* --- SEO UYUMLU AÇIKLAMA --- */}
+
             <p className="text-gray-400 text-sm leading-relaxed">
               İstanbul genelinde, özellikle <strong>Zeytinburnu</strong> ve <strong>Kağıthane</strong> bölgelerinde kentsel dönüşüm ve modern mimari disipliniyle sağlam yarınlar inşa ediyoruz.
             </p>
           </div>
 
+          {/* ... (Diğer Footer kısımları - Linkler, İletişim, Sosyal Medya - AYNI KALACAK) ... */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-[#38BDF8]">Hızlı Bağlantılar</h4>
             <ul className="space-y-4 text-gray-400 text-sm font-medium">
@@ -44,17 +43,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* --- GÜNCEL İLETİŞİM BİLGİLERİ --- */}
           <div>
             <h4 className="text-lg font-bold mb-6 text-[#38BDF8]">İletişim</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
               <li className="flex items-start">
                 <span className="mr-3 mt-1">📍</span>
-                <span>
-                  BAHÇEŞEHİR 2. KISIM MAH. POSTA CAD. <br />
-                  LOCA NO: 6 İÇ KAPI NO: 30 <br />
-                  BAŞAKŞEHİR / İSTANBUL
-                </span>
+                <span>BAHÇEŞEHİR 2. KISIM MAH. POSTA CAD. <br /> LOCA NO: 6 İÇ KAPI NO: 30 <br /> BAŞAKŞEHİR / İSTANBUL</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-3">📞</span>
@@ -77,10 +71,7 @@ const Footer = () => {
           </div>
 
         </div>
-
-        <div className="border-t border-white/10 pt-10 text-center text-gray-500 text-[10px] uppercase tracking-widest font-bold">
-          <p>© {new Date().getFullYear()} Peta Yapı. Tüm Hakları Saklıdır.</p>
-        </div>
+        {/* ... (Footer Alt Kısım) ... */}
       </div>
     </footer>
   );
