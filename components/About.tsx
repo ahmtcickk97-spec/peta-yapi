@@ -4,55 +4,59 @@ import Image from 'next/image';
 
 const About = () => {
   return (
-    <section id="hakkimizda" className="py-24 bg-white overflow-hidden">
+    <section id="hakkimizda" className="py-16 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-16">
+        <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-16">
           
-          {/* --- GÖRSEL ALANI (Güncellendi) --- */}
-          <div className="lg:w-1/2 relative">
-            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-gray-50">
+          {/* GÖRSEL ALANI - render.webp ile güncellendi */}
+          <div className="w-full lg:w-1/2 relative">
+            <div className="relative h-[300px] sm:h-[450px] md:h-[600px] w-full rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl">
               <Image 
-                // YENİ GÖRSEL YOLU: render.webp olarak ayarlandı
                 src="/render.webp" 
-                alt="Peta Yapı Kurumsal" 
-                width={700}
-                height={800}
-                className="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700"
+                alt="Peta Yapı İstanbul Vizyonu" 
+                fill 
+                className="object-cover transition-transform duration-700 hover:scale-105"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
             </div>
-            {/* Dekoratif Mavi Kutu */}
-            <div className="absolute -bottom-6 -right-6 w-64 h-64 bg-[#38BDF8] rounded-[3rem] -z-10 opacity-20 blur-2xl"></div>
-            
-            {/* Deneyim Rozeti */}
-            <div className="absolute -bottom-10 -left-10 bg-[#001F3F] text-white p-8 rounded-[2rem] shadow-2xl hidden md:block z-20">
-              <p className="text-4xl font-black text-[#38BDF8]">10+</p>
-              <p className="text-xs uppercase tracking-widest font-bold opacity-80">Yıllık Tecrübe</p>
+            {/* Tecrübe Kutusu */}
+            <div className="absolute -bottom-4 -right-4 bg-[#001F3F] text-white p-6 md:p-8 rounded-2xl hidden sm:block border-b-4 border-[#38BDF8] shadow-2xl">
+              <p className="text-4xl font-black">10+</p>
+              <p className="text-[10px] font-bold uppercase tracking-widest text-[#38BDF8]">Yıllık Sektör Tecrübesi</p>
             </div>
           </div>
 
-          {/* --- İÇERİK ALANI --- */}
-          <div className="lg:w-1/2 space-y-8">
-            <div className="inline-block px-4 py-1.5 bg-[#38BDF8]/10 text-[#38BDF8] rounded-full text-xs font-black uppercase tracking-widest">
-              Biz Kimiz?
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-black text-[#001F3F] leading-tight uppercase tracking-tighter">
-              Zeytinburnu’nda <br />
-              <span className="text-[#38BDF8]">Geleceği İnşa</span> Ediyoruz
+          {/* METİN ALANI */}
+          <div className="w-full lg:w-1/2 text-center lg:text-left">
+            <h4 className="text-[#38BDF8] font-black text-xs md:text-sm tracking-[0.3em] uppercase mb-4">
+              Kurumsal Kimliğimiz
+            </h4>
+            <h2 className="text-3xl md:text-6xl font-black text-[#001F3F] mb-6 leading-tight uppercase tracking-tighter">
+              Zeytinburnu'ndan Başlayan <br /> 
+              <span className="text-[#38BDF8]">İstanbul Vizyonu</span>
             </h2>
             
-            <p className="text-gray-600 text-lg leading-relaxed font-medium">
-              Peta Yapı olarak, 10 yılı aşkın süredir kentsel dönüşüm ve modern mimari disipliniyle sağlam yarınlar inşa ediyoruz. Özellikle Zeytinburnu ve İstanbul genelinde binlerce aileyi güvenli ve estetik yaşam alanlarıyla buluşturduk.
+            <p className="text-gray-600 text-base md:text-lg mb-8 leading-relaxed font-medium">
+              Peta Yapı olarak, merkezimizin bulunduğu Zeytinburnu başta olmak üzere, İstanbul'un her iki yakasında modern mimari ve mühendislik disipliniyle değer inşa ediyoruz. Şehrin dokusuna saygı duyan, deprem yönetmeliğine tam uyumlu ve estetik kaygısı yüksek projelerimizle, İstanbul'un kentsel dönüşüm sürecine öncülük ediyoruz.
             </p>
-
-            <div className="grid sm:grid-cols-2 gap-6 pt-4">
-              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                <h4 className="text-[#001F3F] font-black mb-2 uppercase text-sm">Vizyonumuz</h4>
-                <p className="text-gray-500 text-xs leading-relaxed">Modern mimariyi, deprem yönetmeliğine uygun en sağlam tekniklerle harmanlamak.</p>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-8 border-t border-gray-100">
+              <div className="group">
+                <h5 className="font-black text-[#001F3F] uppercase text-xs tracking-widest mb-2 group-hover:text-[#38BDF8] transition-colors">
+                  Geniş Hizmet Ağı
+                </h5>
+                <p className="text-gray-500 text-sm">
+                  Kağıthane'den Levent'e, Zeytinburnu'ndan çevre ilçelere kadar geniş bir lokasyonda prestijli projeler üretiyoruz.
+                </p>
               </div>
-              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-100">
-                <h4 className="text-[#001F3F] font-black mb-2 uppercase text-sm">Misyonumuz</h4>
-                <p className="text-gray-500 text-xs leading-relaxed">Her projemizde "Güvenle Dönüşüm" sözünü tutarak hak sahiplerine değer katmak.</p>
+              <div className="group">
+                <h5 className="font-black text-[#001F3F] uppercase text-xs tracking-widest mb-2 group-hover:text-[#38BDF8] transition-colors">
+                  Güvenli Yarınlar
+                </h5>
+                <p className="text-gray-500 text-sm">
+                  Yalnızca bina değil; İstanbul'un kalbinde huzurla yaşanacak, dayanıklı ve modern yaşam alanları tasarlıyoruz.
+                </p>
               </div>
             </div>
           </div>
