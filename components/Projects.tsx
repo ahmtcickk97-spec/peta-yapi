@@ -23,7 +23,7 @@ const projects: ProjectType[] = [
   {
     id: "zeytinburnu-sumer-projesi",
     title: "Sümer Yaşam ve Kentsel Dönüşüm",
-    location: "İstanbul / Zeytinburnu (Hatboyu & Sahil Hattı)",
+    location: "İstanbul / Zeytinburnu (Sümer)",
     // TAM OLARAK İSTEDİĞİN METİN:
     description: "Zeytinburnu’nun kalbi Sümer Mahallesi’nde, Hatboyu Caddesi’ne komşu bu projemizde kentsel dönüşüm sürecini başlattık. Bölgenin dokusuna modern bir kimlik kazandırırken, hak sahiplerini depreme dayanıklı ve estetik yaşam alanlarıyla buluşturuyoruz.",
     category: "Kentsel Dönüşüm Projesi",
