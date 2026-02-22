@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 
-// 1. Tip Tanımlaması
+// 1. Tip Tanımlaması (Video desteği eklendi)
 type ProjectType = {
   id: string;
   title: string;
@@ -14,11 +14,23 @@ type ProjectType = {
   currentImage?: string; 
   futureImage?: string;  
   mainImage?: string;
+  videoUrl?: string; // Yeni projeniz için video alanı
   gallery?: string[];
 };
 
 // 2. Proje Verileri
 const projects: ProjectType[] = [
+  {
+    id: "zeytinburnu-sumer-projesi",
+    title: "Sümer Yaşam ve Kentsel Dönüşüm",
+    location: "İstanbul / Zeytinburnu (Hatboyu & Sahil Hattı)",
+    description: "Zeytinburnu’nun kalbi Sümer Mahallesi’nde, Hatboyu Caddesi ile Sahil Yolu arasında stratejik bir konumda yer alan kentsel dönüşüm projemiz. Hem ulaşım akslarına hem de sahil hattına yürüme mesafesinde, modern ve güvenli bir yaşamın kapılarını aralıyoruz.",
+    category: "Kentsel Dönüşüm Projesi",
+    details: ["Anlaşma Sağlandı", "Hatboyu'na Yakın", "Sahil Yoluna Komşu", "Depreme Dayanıklı"],
+    status: "ongoing",
+    mainImage: "/projects/sumer/ana-gorsel.webp", // Buraya görselin ismini yazabilirsin
+    videoUrl: "/projects/sumer/proje-video.mp4",  // Buraya videonun ismini yazabilirsin
+  },
   {
     id: "kagithane-projesi",
     title: "Kağıthane Prestij Kule",
@@ -57,7 +69,7 @@ const Projects = () => {
 
   return (
     <section id="projelerimiz" className="py-12 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 lg:max-w-[95%]">
         <div className="text-center mb-12 md:mb-20">
           <h2 className="text-3xl md:text-5xl font-black text-[#001F3F] uppercase tracking-tighter mb-4">
             PROJELERİMİZ
@@ -70,9 +82,22 @@ const Projects = () => {
             <div key={project.id} className="bg-gray-50 rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-xl border border-gray-100">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 
-                {/* --- GÖRSEL ALANI --- */}
+                {/* --- GÖRSEL VE VİDEO ALANI --- */}
                 <div className="p-4 md:p-8 bg-white h-full">
-                  {project.status === "ongoing" ? (
+                  {project.videoUrl ? (
+                    // Eğer video varsa video player gösterilir
+                    <div className="space-y-4">
+                       <div className="relative h-[250px] sm:h-[350px] md:h-[450px] rounded-[1.5rem] overflow-hidden shadow-lg">
+                        <video 
+                          src={project.videoUrl} 
+                          controls 
+                          className="w-full h-full object-cover"
+                          poster={project.mainImage} // Video yüklenene kadar görünecek resim
+                        />
+                      </div>
+                      <p className="text-[10px] font-bold text-[#38BDF8] uppercase tracking-widest text-center">Proje Tanıtım Videosu</p>
+                    </div>
+                  ) : project.status === "ongoing" ? (
                     <div className="flex flex-col gap-6 h-full justify-center">
                       <div className="relative h-[220px] md:h-[280px] rounded-[1.5rem] overflow-hidden shadow-lg cursor-zoom-in group" onClick={() => setSelectedImg(project.futureImage || null)}>
                          <Image 
@@ -167,7 +192,7 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* LIGHTBOX */}
+      {/* LIGHTBOX (Resimler için) */}
       {selectedImg && (
         <div className="fixed inset-0 z-[100] bg-[#001F3F]/98 backdrop-blur-md flex items-center justify-center p-4 cursor-zoom-out" onClick={() => setSelectedImg(null)}>
           <div className="relative w-full h-full max-w-6xl">
