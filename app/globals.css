@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 html {
   scroll-behavior: smooth;
 }
@@ -6,27 +8,55 @@ html {
 section {
   scroll-margin-top: 80px;
 }
-html { scroll-behavior: smooth; }
-@import "tailwindcss";
 
 :root {
+  /* İnci Group tasarım dili paleti */
   --background: #ffffff;
-  --foreground: #4B5563; /* Slogan rengi */
-  --brand-primary: #0F2354; /* Ana Lacivert */
-  --brand-text: #4B5563;    /* Eksik olan tanımlama */
+  --foreground: #222222;        /* Ana metin */
+  --muted: #555555;             /* İkincil metin */
+  --brand-dark: #111111;        /* Koyu paneller / footer */
+  --brand-soft: #f7f6f4;        /* Açık gri bölüm zemini */
+  --brand-accent: #a89b89;      /* Kurumsal altın / taupe vurgu */
+  --brand-accent-dark: #8a7d6b;
+  --brand-line: #e6e2dc;        /* İnce ayraç çizgileri */
+
+  /* Eski değişken adlarıyla geriye dönük uyumluluk */
+  --brand-primary: #111111;
+  --brand-text: #222222;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-dark: var(--brand-accent-dark);
+  --color-brand-line: var(--brand-line);
   --color-brand-primary: var(--brand-primary);
-  --color-brand-text: var(--brand-text); /* Bu satır layout.tsx hatasını çözer */
-  
+  --color-brand-text: var(--brand-text);
+
   --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-krona), var(--font-montserrat), sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+}
+
+/* İnci Group başlık fontu (Krona One) yardımcı sınıfı */
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Yatay kaydırılan galeriler için ince scrollbar */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: var(--brand-accent);
+  border-radius: 9999px;
 }
