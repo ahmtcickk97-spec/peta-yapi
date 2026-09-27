@@ -1,62 +1,79 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
+@layer base {
+  :root {
+    /* incigroupyapi.com tasarım dili: #f7f6f4 / #111111 / #222222 / #a89b89 */
+    --background: 40 14% 96%;          /* #f7f6f4 */
+    --foreground: 0 0% 13%;            /* #222222 */
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 0 0% 7%;                /* #111111 */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 0 0% 13%;
+
+    --muted: 40 10% 92%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 35 14% 60%;              /* #a89b89 */
+    --accent-foreground: 0 0% 20%;
+
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 10% 86%;
+    --input: 36 10% 80%;
+    --ring: 35 14% 60%;
+
+    --radius: 0px;
+  }
 }
 
-/* Navbar bölümleri kapatmasın diye yukarıdan boşluk bırakır */
-section {
-  scroll-margin-top: 80px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
 }
 
-:root {
-  /* İnci Group tasarım dili paleti */
-  --background: #ffffff;
-  --foreground: #222222;        /* Ana metin */
-  --muted: #555555;             /* İkincil metin */
-  --brand-dark: #111111;        /* Koyu paneller / footer */
-  --brand-soft: #f7f6f4;        /* Açık gri bölüm zemini */
-  --brand-accent: #a89b89;      /* Kurumsal altın / taupe vurgu */
-  --brand-accent-dark: #8a7d6b;
-  --brand-line: #e6e2dc;        /* İnce ayraç çizgileri */
-
-  /* Eski değişken adlarıyla geriye dönük uyumluluk */
-  --brand-primary: #111111;
-  --brand-text: #222222;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-brand-dark: var(--brand-dark);
-  --color-brand-soft: var(--brand-soft);
-  --color-brand-accent: var(--brand-accent);
-  --color-brand-accent-dark: var(--brand-accent-dark);
-  --color-brand-line: var(--brand-line);
-  --color-brand-primary: var(--brand-primary);
-  --color-brand-text: var(--brand-text);
-
-  --font-sans: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-krona), var(--font-montserrat), sans-serif;
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
-}
-
-/* İnci Group başlık fontu (Krona One) yardımcı sınıfı */
-.font-display {
-  font-family: var(--font-display);
-}
-
-/* Yatay kaydırılan galeriler için ince scrollbar */
-.scrollbar-thin::-webkit-scrollbar {
-  height: 6px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: var(--brand-accent);
-  border-radius: 9999px;
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-[1280px] px-6 md:px-10;
+  }
+  .section-label {
+    @apply mb-4 block text-xs font-medium uppercase tracking-[3px] text-accent;
+  }
+  .section-title {
+    @apply font-display text-[28px] leading-tight tracking-[2px] md:text-[40px];
+  }
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-3 border border-white/30 px-10 py-4 text-[13px] uppercase tracking-[3px] text-white transition-all duration-300 hover:border-white hover:bg-white hover:text-primary;
+  }
+  .btn-dark {
+    @apply inline-flex items-center justify-center gap-3 bg-primary px-10 py-4 text-[13px] uppercase tracking-[3px] text-primary-foreground transition-all duration-300 hover:bg-accent;
+  }
 }

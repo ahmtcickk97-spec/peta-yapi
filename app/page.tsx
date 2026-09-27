@@ -1,25 +1,30 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Projects from "@/components/Projects";
-import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton"; // Buraya ekledik
+import { Header } from '@/components/site/header'
+import { Hero } from '@/components/site/hero'
+import { About } from '@/components/site/about'
+import { Services } from '@/components/site/services'
+import { Projects } from '@/components/site/projects'
+import { Stats } from '@/components/site/stats'
+import { Contact } from '@/components/site/contact'
+import { Footer } from '@/components/site/footer'
+import { WhatsAppButton } from '@/components/site/whatsapp-button'
+
+export const dynamic = 'force-static'
 
 export default function Home() {
+  const year = 2026
   return (
-    <main className="min-h-screen relative"> {/* 'relative' eklemek z-index yönetimi için iyidir */}
-      <Navbar />
-      <Hero />
-      <div id="hakkimizda"><About /></div>
-      <div id="hizmetlerimiz"><Services /></div>
-      <div id="projelerimiz"><Projects /></div>
-      <div id="iletisim"><ContactForm /></div>
-      <Footer />
-      
-      {/* WhatsApp Butonu en altta, her şeyin üstünde görünecek */}
-      <WhatsAppButton /> 
-    </main>
-  );
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Projects />
+        <Stats />
+        <Contact />
+      </main>
+      <Footer year={year} />
+      <WhatsAppButton />
+    </>
+  )
 }
