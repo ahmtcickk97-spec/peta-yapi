@@ -96,14 +96,14 @@ export function Projects() {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 40, opacity: 0 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="relative mx-auto grid max-w-6xl bg-background lg:grid-cols-[1.4fr_1fr]"
+              className="relative mx-auto grid w-full max-w-6xl grid-cols-1 bg-background lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button type="button" onClick={close} aria-label="Kapat" className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center bg-primary text-primary-foreground transition-colors hover:bg-accent">
                 <X className="h-5 w-5" />
               </button>
 
-              <div className="bg-primary">
+              <div className="min-w-0 bg-primary">
                 <div className="relative aspect-[4/3] w-full">
                   {current?.type === 'video' ? (
                     <video key={current?.src} src={current?.src} controls autoPlay muted playsInline className="absolute inset-0 h-full w-full object-contain" />
@@ -142,7 +142,7 @@ export function Projects() {
                 )}
               </div>
 
-              <div className="p-8 md:p-10">
+              <div className="min-w-0 p-8 md:p-10">
                 <span className="section-label">{selected?.category}</span>
                 <h3 className="font-display text-2xl leading-snug">{selected?.title}</h3>
                 <p className="mt-3 flex items-center gap-2 text-sm text-muted-foreground">
