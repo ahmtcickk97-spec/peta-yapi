@@ -1,5 +1,19 @@
 import type { Metadata } from "next";
+import { Montserrat, Krona_One } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const kronaOne = Krona_One({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-krona",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.petayapi.com"),
@@ -44,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr">
+    <html lang="tr" className={`${montserrat.variable} ${kronaOne.variable}`}>
       <body className="antialiased">{children}</body>
     </html>
   );
