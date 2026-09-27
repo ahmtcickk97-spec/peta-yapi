@@ -3,9 +3,9 @@ import { headers } from 'next/headers'
 
 export const dynamic = 'force-dynamic'
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default async function robots(): Promise<MetadataRoute.Robots> {
   const h = await headers()
   const host = h?.get('x-forwarded-host') ?? h?.get('host')
   const baseUrl = host ? `https://${host}` : 'https://www.petayapi.com'
-  return [{ url: baseUrl, lastModified: new Date(), changeFrequency: 'monthly', priority: 1 }]
+  return { rules: [{ userAgent: '*', allow: '/' }], sitemap: `${baseUrl}/sitemap.xml` }
 }
