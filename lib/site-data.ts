@@ -22,17 +22,17 @@ export const SERVICES = [
   {
     title: 'Kentsel Dönüşüm',
     text: 'Geleceği bugünden güvenle inşa ediyoruz. Eski ve riskli yapılarınızı, güncel yönetmeliklere uygun ve modern yaşam standartlarına sahip sağlam yapılara dönüştürüyoruz.',
-    image: '/projects/midyat/arka-cephe.webp',
+    image: '/services/kentsel-donusum.jpg',
   },
   {
     title: 'Mimari Proje ve Tasarım',
     text: 'Estetiği işlevsellik ile buluşturuyoruz. Her bir detayı titizlikle planlanmış, modern çizgilere sahip, çevreyle uyumlu projeler tasarlıyoruz.',
-    image: '/projects/midyat/salon.webp',
+    image: '/services/mimari-proje.jpg',
   },
   {
     title: 'İnşaat Taahhüt',
     text: "Projelerinizi tam zamanında ve yüksek kalite standartlarında teslim ediyoruz. Malzeme seçiminden işçiliğe kadar her aşamada 'sağlam yarınlar' sözümüzü tutuyoruz.",
-    image: '/projects/kagithane/temel.webp',
+    image: '/services/insaat-taahhut.jpg',
   },
 ]
 
